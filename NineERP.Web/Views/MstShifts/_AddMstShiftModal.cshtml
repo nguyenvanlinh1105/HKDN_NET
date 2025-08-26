@@ -1,0 +1,53 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<!-- Modal Add New Shift -->
+<div class="modal fade" id="modalAddMstShift" tabindex="-1" role="dialog" aria-labelledby="modalAddMstShiftLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<form id="form-add-mst-shift">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalAddMstShiftLabel"></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="@Localizer["Close"]">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" id="mstShiftId" name="Id" />
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label>@Localizer["MorningStartTime"] <span class="text-danger">*</span></label>
+							<input type="time" class="form-control" id="morningStartTime" name="MorningStartTime" required />
+						</div>
+						<div class="form-group col-md-6">
+							<label>@Localizer["MorningEndTime"] <span class="text-danger">*</span></label>
+							<input type="time" class="form-control" id="morningEndTime" name="MorningEndTime" required />
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label>@Localizer["AfternoonStartTime"] <span class="text-danger">*</span></label>
+							<input type="time" class="form-control" id="afternoonStartTime" name="AfternoonStartTime" required />
+						</div>
+						<div class="form-group col-md-6">
+							<label>@Localizer["AfternoonEndTime"] <span class="text-danger">*</span></label>
+							<input type="time" class="form-control" id="afternoonEndTime" name="AfternoonEndTime" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label>@Localizer["Description"]</label>
+						<textarea class="form-control" id="mstShiftDescription" name="Description" rows="2"></textarea>
+					</div>
+					<div class="form-group form-check">
+						<input type="checkbox" class="form-check-input" id="isDefault" name="IsDefault" />
+						<label class="form-check-label" for="isDefault">@Localizer["Default"]</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-light" data-dismiss="modal">@Localizer["Cancel"]</button>
+					<button type="submit" class="btn btn-success" id="btnSaveAndContinue">@Localizer["SaveAndContinue"]</button>
+					<button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

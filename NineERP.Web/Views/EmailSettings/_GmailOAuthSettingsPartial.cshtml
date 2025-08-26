@@ -1,0 +1,28 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label for="ClientId">@Localizer["Client ID"] <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="ClientId" name="ClientId">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="ClientSecret">@Localizer["Client Secret"] <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="ClientSecret" name="ClientSecret">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="RefreshToken">@Localizer["Refresh Token"] <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="RefreshToken" name="RefreshToken">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="AccessToken">@Localizer["Access Token"]</label>
+        <input type="text" class="form-control" id="AccessToken" name="AccessToken">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="SenderEmail">@Localizer["Sender Email"] <span class="text-danger">*</span></label>
+        <input type="email" class="form-control" id="SenderEmail" name="SenderEmail">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="SenderName">@Localizer["Sender Name"]</label>
+        <input type="text" class="form-control" id="SenderName" name="SenderName">
+    </div>
+</div>

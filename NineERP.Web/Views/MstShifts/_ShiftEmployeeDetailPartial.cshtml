@@ -1,0 +1,21 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div id="employee-detail-modal-content" style="display:none;">
+    <div class="mb-2 text-right">
+        <button class="btn-move-employees btn btn-sm btn-primary" disabled>
+            @Localizer["MoveSelectEmployee"]
+        </button>
+    </div>
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="select-all-employees" /></th>
+                <th>@Localizer["EmployeeCode"]</th>
+                <th>@Localizer["FullName"]</th>
+            </tr>
+        </thead>
+        <tbody id="employee-detail-body">
+            <!-- Dynamic rows will be injected here by JavaScript -->
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,24 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <label for="PasswordDefault">@Localizer["Password Default"] <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="PasswordDefault" name="PasswordDefault">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="FiscalYearStartDay">@Localizer["Fiscal Year Start Day (dd/mm)"] <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="FiscalYearStartDay" name="FiscalYearStartDay">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="AnnualLeaveDays">@Localizer["Annual Leave Days"] <span class="text-danger">*</span></label>
+        <input type="number" class="form-control" id="AnnualLeaveDays" name="AnnualLeaveDays">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="ApprovedBy">@Localizer["Approve Leave By"]</label>
+        <input type="text" class="form-control" id="ApprovedBy" name="ApprovedBy">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="CancelBy">@Localizer["Cancel Leave By"]</label>
+        <input type="text" class="form-control" id="CancelBy" name="CancelBy">
+    </div>
+</div>

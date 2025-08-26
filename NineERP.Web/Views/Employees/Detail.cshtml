@@ -1,0 +1,365 @@
+﻿@model NineERP.Application.Dtos.Employees.EmployeeDetailDto
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["EmployeeDetail"];
+    string dateFormat = System.Globalization.CultureInfo.CurrentUICulture.Name.StartsWith("vi") ? "dd/MM/yyyy" : "yyyy/MM/dd";
+
+    var genderDisplay = new Dictionary<byte, string>
+    {
+        { 0, Localizer["Male"].Value },
+        { 1, Localizer["Female"].Value },
+        { 2, Localizer["Other"].Value }
+    };
+
+    var maritalStatusDisplay = new Dictionary<short, string>
+    {
+        { 0, Localizer["Single"].Value },
+        { 1, Localizer["Married"].Value },
+        { 2, Localizer["Divorced"].Value }
+    };
+
+    Func<object?, string> display = val => val == null || string.IsNullOrEmpty(val.ToString()) ? "<span class='text-muted font-italic'>-</span>" : val.ToString()!;
+}
+@section Styles {
+    <link rel="stylesheet" href="~/admin-app/controllers/employee/detail.css" />
+}
+@section Scripts {
+    <script src="~/assets/libs/pdfjs/2.14.305/pdf.min.js"></script>
+<script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = '/assets/libs/pdfjs/2.14.305/pdf.worker.min.js';
+</script>
+
+
+    <script src="~/admin-app/controllers/employee/detail.js" asp-append-version="true"></script>
+    <script>
+        const employeeId = @Model.Id;
+        var employeeDetail = new EmployeeDetail();
+        $(function () {
+            employeeDetail.initialize();
+            $('#employeeTabs a').on('shown.bs.tab', function (e) {
+                const target = $(e.target).attr("href");
+                $(target).hide().fadeIn(300);
+            });
+        });
+
+        window.localization = {
+            Male: '@Localizer["Male"]',
+            Female: '@Localizer["Female"]',
+            Other: '@Localizer["Other"]',
+            Single: '@Localizer["Single"]',
+            Married: '@Localizer["Married"]',
+            Divorced: '@Localizer["Divorced"]',
+            Active: '@Localizer["Active"]',
+            Probation: '@Localizer["Probation"]',
+            Internship: '@Localizer["Internship"]',
+            PartTime: '@Localizer["PartTime"]',
+            Contractor: '@Localizer["Contractor"]',
+            ProjectBased: '@Localizer["ProjectBased"]',
+            Official: '@Localizer["Official"]',
+            Retired: '@Localizer["Retired"]',
+            ConfirmDeleteDocumentTitle: '@Localizer["ConfirmDeleteDocumentTitle"]',
+            ConfirmDeleteDocumentText: '@Localizer["ConfirmDeleteDocumentText"]',
+            Yes: '@Localizer["Yes"]',
+            No: '@Localizer["No"]',
+            UploadSuccessful: '@Localizer["UploadSuccessful"]',
+            UploadFailed: '@Localizer["UploadFailed"]',
+            DeleteSuccessful: '@Localizer["DeleteSuccessful"]',
+            DeleteFailed: '@Localizer["DeleteFailed"]',
+            NoDocumentsFound: '@Localizer["NoDocumentsFound"]',
+            UnsupportedFileFormat: '@Localizer["UnsupportedFileFormat"]',
+            ConfirmDeleteEmployeeTitle: '@Localizer["ConfirmDeleteEmployeeTitle"]',
+            ConfirmDeleteEmployeeText: '@Localizer["ConfirmDeleteEmployeeText"]',
+            Exporting : '@Localizer["Exporting "]',
+        };
+    </script>
+    <style>
+        .tab-pane { transition: opacity 0.3s ease-in-out; }
+        .font-italic { font-style: italic; }
+    </style>
+}
+
+<div class="row">
+    <div class="col">
+        <h4 class="page-title">@ViewData["Title"]</h4>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/dashboard">@Localizer["Dashboard"]</a></li>
+                <li class="breadcrumb-item"><a href="/employees">@Localizer["EmployeeManagement"]</a></li>
+                <li class="breadcrumb-item active">@Model.FullName</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="mb-2 text-right">
+    <a href="javascript:void(0)" id="btn-export-contract" class="btn btn-outline-info mr-1" title="@Localizer["ExportContract"]" data-toggle="tooltip">
+        <i class="mdi mdi-file-pdf-box"></i>
+    </a>
+
+    <a href="/employees/edit/@Model.Id" class="btn btn-outline-primary mr-1 btn-edit-from-detail"
+       title="@Localizer["EditEmployee"]" data-toggle="tooltip">
+        <i class="mdi mdi-pencil"></i>
+    </a>
+    <button class="btn btn-outline-danger mr-1"
+            id="btn-delete-employee"
+            data-toggle="tooltip"
+            title="@Localizer["DeleteEmployee"]">
+        <i class="fe-trash-2"></i>
+    </button>
+    <a href="javascript:void(0)" class="btn btn-outline-secondary" id="btn-back-employee" title="@Localizer["BackToList"]" data-toggle="tooltip">
+        <i class="mdi mdi-arrow-left"></i>
+    </a>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body d-flex align-items-center">
+        <img src="/preview/avatar/@Model.ImageURL" class="rounded-circle border" width="80" height="80" onerror="this.src='/assets/images/users/no-avatar.png'" />
+        <div class="ml-3">
+            <h4 class="mb-1 text-dark">
+                @Model.EmployeeNo - @Model.FullName <span id="employee-status" data-status="@Model.EmployeeStatusName"></span>
+            </h4>
+            <small class="text-muted">
+                <i class="mdi mdi-cake-variant"></i> @Model.Birthday?.ToString(dateFormat) &nbsp;
+                <i class="mdi mdi-phone"></i> @Model.PhoneNo &nbsp;
+                <i class="mdi mdi-email"></i> @Model.Email
+            </small>
+        </div>
+    </div>
+</div>
+
+<ul class="nav nav-tabs" id="employeeTabs">
+    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#general">@Localizer["GeneralInformation"]</a></li>
+    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#education">@Localizer["EducationInformation"]</a></li>
+    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#bank">@Localizer["BankAndSalary"]</a></li>
+    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#emergency">@Localizer["EmergencyContact"]</a></li>
+    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#identity">@Localizer["Identity"]</a></li>
+    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#document">@Localizer["Document"]</a></li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="general">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card border p-3 mb-4 h-100">
+                    <h5 class="text-primary">@Localizer["PersonalInformation"]</h5>
+                    <p><strong>@Localizer["NickName"]:</strong> @Html.Raw(display(Model.NickName))</p>
+                    <p><strong>@Localizer["PlaceOfBirth"]:</strong> @Html.Raw(display(Model.PlaceOfBirth))</p>
+                    <p><strong>@Localizer["Gender"]:</strong> @(Model.Gender.HasValue ? genderDisplay.GetValueOrDefault(Model.Gender.Value, "-") : Html.Raw(display(null)))</p>
+                    <p><strong>@Localizer["MaritalStatus"]:</strong> @(Model.MaritalStatus.HasValue ? maritalStatusDisplay.GetValueOrDefault(Model.MaritalStatus.Value, "-") : Html.Raw(display(null)))</p>
+                    <p><strong>@Localizer["NumberOfChildren"]:</strong> @Html.Raw(display(Model.NumberChild))</p>
+                    <p><strong>@Localizer["Address"]:</strong> @Html.Raw(display(Model.Address))</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card border p-3 mb-4 h-100">
+                    <h5 class="text-success">@Localizer["WorkInfo"]</h5>
+                    <p><strong>@Localizer["Department"]:</strong> @Html.Raw(display(Model.DepartmentName))</p>
+                    <p><strong>@Localizer["Position"]:</strong> @Html.Raw(display(Model.PositionName))</p>
+                    <p><strong>@Localizer["WorkingFrom"]:</strong> @(Model.WorkingDateFrom?.ToString(dateFormat) ?? "-") - @(Model.WorkingDateTo?.ToString(dateFormat) ?? "-")</p>
+                    <p><strong>@Localizer["ContractNumber"]:</strong> @Html.Raw(display(Model.ContractNumber))</p>
+                    <p><strong>@Localizer["ContractType"]:</strong> @Html.Raw(display(Model.ContractTypeName))</p>
+                    <p><strong>@Localizer["ContractDuration"]:</strong> @(Model.ContractFrom?.ToString(dateFormat) ?? "-") - @(Model.ContractTo?.ToString(dateFormat) ?? "-")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="bank">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card border p-3 mb-4 h-100">
+                    <h5 class="text-primary">@Localizer["BankAndPaymentInfo"]</h5>
+                    <p><strong>@Localizer["BasicSalary"]:</strong> @Html.Raw(display(Model.SalaryInfo?.SalaryBasic.HasValue == true ? Model.SalaryInfo.SalaryBasic.Value.ToString("N0") + " VND" : null))</p>
+                    <p><strong>@Localizer["GrossSalary"]:</strong> @Html.Raw(display(Model.SalaryInfo?.SalaryGross.HasValue == true ? Model.SalaryInfo.SalaryGross.Value.ToString("N0") + " VND" : null))</p>
+                    <p><strong>@Localizer["BankName"]:</strong> @Html.Raw(display(Model.SalaryInfo?.BankName))</p>
+                    <p><strong>@Localizer["BankAccount"]:</strong> @Html.Raw(display(Model.SalaryInfo?.BankNumber))</p>
+                    <p><strong>@Localizer["AccountName"]:</strong> @Html.Raw(display(Model.SalaryInfo?.BankAccountName))</p>
+                    <p><strong>@Localizer["PaymentType"]:</strong> @(Model.SalaryInfo?.PaymentType == 0 ? Localizer["Cash"] : Localizer["BankTransfer"])</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card border p-3 mb-4 h-100">
+                    <h5 class="text-success">@Localizer["TaxAndInsuranceInfo"]</h5>
+                    <p><strong>@Localizer["TaxCode"]:</strong> @Html.Raw(display(Model.TaxCode))</p>
+                    <p><strong>@Localizer["SocialInsurance"]:</strong> @Html.Raw(display(Model.SocialInsuranceNumber))</p>
+                    <p><strong>@Localizer["NumberOfDependents"]:</strong> @Html.Raw(display(Model.NumberOfDependents))</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="education">
+        <div class="card border p-3 mb-4">
+            <h5 class="text-primary">@Localizer["EducationInformation"]</h5>
+            <p><strong>@Localizer["EducationLevel"]:</strong> @Html.Raw(display(Model.EducationLevel))</p>
+            <p><strong>@Localizer["SoftSkill"]:</strong> @Html.Raw(display(Model.SoftSkill))</p>
+            <p><strong>@Localizer["BusinessExperience"]:</strong> @Html.Raw(display(Model.BusinessExp))</p>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="emergency">
+        <div class="card border p-3 mb-4">
+            <h5 class="text-danger">@Localizer["EmergencyContact"]</h5>
+            @if (Model.EmergencyContact != null)
+            {
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="border rounded p-3 mb-4" style="border-style: dashed;">
+                            <p><strong>@Localizer["PrimaryContactName"]:</strong> @Html.Raw(display(Model.EmergencyContact.NamePrimaryContact))</p>
+                            <p><strong>@Localizer["Relationship"]:</strong> @Html.Raw(display(Model.EmergencyContact.RelationshipPrimaryContact))</p>
+                            <p><strong>@Localizer["PhoneNo"]:</strong> @Html.Raw(display(Model.EmergencyContact.PhoneNoPrimaryContact))</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded p-3 mb-4" style="border-style: dashed;">
+                            <p><strong>@Localizer["SecondaryContactName"]:</strong> @Html.Raw(display(Model.EmergencyContact.NameSecondaryContact))</p>
+                            <p><strong>@Localizer["Relationship"]:</strong> @Html.Raw(display(Model.EmergencyContact.RelationshipSecondaryContact))</p>
+                            <p><strong>@Localizer["PhoneNo"]:</strong> @Html.Raw(display(Model.EmergencyContact.PhoneNoSecondaryContact))</p>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <p class="text-muted font-italic">@Localizer["NoEmergencyContactAvailable"]</p>
+            }
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="identity">
+        <div class="card border p-3 mb-4">
+            <h5 class="text-info">@Localizer["CitizenshipCard"]</h5>
+
+            <div class="border rounded p-3 mb-4" style="border-style: dashed;">
+                <p><strong>@Localizer["CardNumber"]:</strong> @Html.Raw(display(Model.IdentityInfo?.CitizenshipCard))</p>
+                <p>
+                    <strong>@Localizer["ProvideDate"]:</strong> @(Model.IdentityInfo?.ProvideDateCitizenshipCard != null
+                                        ? Model.IdentityInfo.ProvideDateCitizenshipCard.Value.ToString(dateFormat)
+                                        : Html.Raw(display(null)))
+                </p>
+                <p><strong>@Localizer["ProvidePlace"]:</strong> @Html.Raw(display(Model.IdentityInfo?.ProvidePlaceCitizenshipCard))</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="font-weight-bold">@Localizer["FrontSide"]</label>
+                    <div class="border rounded d-flex align-items-center justify-content-center" style="height: 200px; border-style: dashed;">
+                        @if (!string.IsNullOrEmpty(Model.IdentityInfo?.PhotoBeforeCitizenshipCard))
+                        {
+                            <img src="@Model.IdentityInfo.PhotoBeforeCitizenshipCard" class="img-fluid" style="max-height: 180px;" alt=">@Localizer["FrontSide"]" />
+                        }
+                        else
+                        {
+                            <span class="text-success display-4">+</span>
+                        }
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="font-weight-bold">@Localizer["BackSide"]</label>
+                    <div class="border rounded d-flex align-items-center justify-content-center" style="height: 200px; border-style: dashed;">
+                        @if (!string.IsNullOrEmpty(Model.IdentityInfo?.PhotoAfterCitizenshipCard))
+                        {
+                            <img src="@Model.IdentityInfo.PhotoAfterCitizenshipCard" class="img-fluid" style="max-height: 180px;" alt="@Localizer["BackSide"]" />
+                        }
+                        else
+                        {
+                            <span class="text-success display-4">+</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="document">
+        <div class="card border p-3 mb-4">
+            <h5 class="text-muted">@Localizer["Document"]</h5>
+            <div class="text-right mb-2">
+                <button id="btn-upload-document" class="btn btn-outline-primary">
+                    <i class="mdi mdi-upload"></i> @Localizer["Upload"]
+                </button>
+                <input type="file" id="fileDocument" class="d-none" data-employee="@Model.EmployeeNo" accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.jpg,.jpeg,.png,.gif,.webp" />
+                <div id="uploadProgressWrapper" class="mt-2 d-none">
+                    <div class="progress">
+                        <div id="uploadProgressBar" class="progress-bar progress-bar-striped progress-bar-animated"
+                            role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            0%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @if (Model.Documents != null && Model.Documents.Any())
+            {
+                <div class="row" id="document-list">
+                    @foreach (var doc in Model.Documents)
+                    {
+                        <div class="col-md-4 mb-3">
+                            <div class="border rounded p-2 h-100 position-relative">
+                                <p class="mb-1">
+                                    <i class="mdi mdi-file-document-outline"></i>
+                                    <strong>@doc.NameFile</strong>
+                                </p>
+                                <p class="text-muted small mb-1">
+                                    @doc.SizeFile - @doc.TypeFile<br />
+                                    @{ var createdByImage = (doc.CreatedBy?.ToLowerInvariant().Replace(" ", "-").Replace(".", "-") ?? "no-avatar") + ".png"; }
+                                    <img src="/images/users/@createdByImage"
+                                        onerror="this.src='/assets/images/users/no-avatar.png'"
+                                        class="rounded-circle mr-1" width="24" height="24" />
+                                    <span class="text-muted">@doc.CreatedBy</span> ·
+                                    <span>@doc.CreatedOn.ToString(dateFormat)</span>
+                                </p>
+                                <button class="btn btn-sm btn-outline-info btn-preview-document"
+                                        data-fileid="@doc.GoogleDriveFileId"
+                                        data-ext="@(doc.TypeFile != null ? doc.TypeFile.ToLowerInvariant() : string.Empty)">
+                                    <i class="mdi mdi-eye"></i>
+                                </button>
+                                <a class="btn btn-sm btn-outline-primary"
+                                href="@doc.GoogleDriveFileUrl"
+                                target="_blank" download>
+                                    <i class="mdi mdi-download"></i>
+                                </a>
+                                <button class="btn btn-sm btn-outline-danger btn-delete-document" data-id="@doc.Id">
+                                    <i class="fe-trash-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p class="text-muted font-italic">@Localizer["NoDocumentUploadedYet"]</p>
+            }
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="previewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="previewModalLabel">@Localizer["PreviewDocument"]</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-0 position-relative">
+                <div id="previewLoading"
+                    style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 10; text-align: center;">
+                    <div style="position: relative; top: 50%; transform: translateY(-50%);">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="sr-only">@Localizer["Loading"]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <iframe id="previewFrame" frameborder="0" class="d-none"></iframe>
+                <div id="pdfCanvasContainer" class="w-100" style="overflow-y:auto; max-height:600px;"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

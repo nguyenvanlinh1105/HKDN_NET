@@ -1,0 +1,108 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["MstTeamManagement"];
+    var breadcrumb = new List<(string Text, string Url)>
+    {
+        (Localizer["Dashboard"].Value, "/dashboard"),
+        (Localizer["MstTeamManagement"].Value, null!)
+    };
+}
+
+@section Scripts {
+    <script src="~/assets/libs/mustache/mustache.min.js" asp-append-version="true"></script>
+    <script src="~/admin-app/controllers/mstTeam/index.js" asp-append-version="true"></script>
+    <script>
+        var mstTeamObj = new MstTeamsController();
+        mstTeamObj.initialize();
+
+        window.localization = {
+            ConfirmDeleteTitle: '@Localizer["ConfirmDeleteTitle"]',
+            ConfirmDeleteText: '@Localizer["ConfirmDeleteText"]',
+            Yes: '@Localizer["Yes"]',
+            No: '@Localizer["No"]',
+            Active: '@Localizer["Active"]',
+            Block: '@Localizer["Block"]',
+            AddNewMstTeam: '@Localizer["AddNewMstTeam"]',
+            EditMstTeam: '@Localizer["EditMstTeam"]',
+            NoRecordsFound: '@Localizer["NoRecordsFound"]',
+        };
+    </script>
+}
+
+<!-- Breadcrumb -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex justify-content-between align-items-center">
+            <div>
+                <h4 class="page-title">@ViewData["Title"]</h4>
+            </div>
+            <div>
+                @await Html.PartialAsync("_BreadcrumbPartial", breadcrumb)
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filter -->
+<div class="row mb-2">
+    <div class="col-lg-8">
+        <form class="form-inline" id="form-filter">
+            <div class="form-group mr-2">
+                <input type="text" id="txtKeyword" class="form-control" placeholder="@Localizer["Search name..."]" />
+            </div>
+            <button type="button" id="btn-search" class="btn btn-primary mr-2">
+                <i class="mdi mdi-magnify"></i> @Localizer["Search"]
+            </button>
+        </form>
+    </div>
+    <div class="col-lg-4 text-lg-right mt-3 mt-lg-0">
+        <button type="button" class="btn btn-danger float-right" id="btn-show-add-modal">
+            <i class="mdi mdi-plus-circle"></i> @Localizer["AddNew"]
+        </button>
+    </div>
+</div>
+
+<!-- Table View -->
+<div class="card" id="device-type-list-view">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>@Localizer["Number"]</th>
+                        <th>@Localizer["NameVi"]</th>
+                        <th>@Localizer["NameEn"]</th>
+                        <th>@Localizer["NameJp"]</th>
+                        <th>@Localizer["Description"]</th>
+                        <th class="text-center">@Localizer["Action"]</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl-content"></tbody>
+            </table>
+        </div>
+        <partial name="_PaginationPartial" />
+    </div>
+</div>
+
+<!-- Template -->
+<script id="table-template" type="x-tmpl-mustache">
+    <tr>
+        <td>{{DisplayOrder}}</td>
+        <td>{{NameVi}}</td>
+        <td>{{NameEn}}</td>
+        <td>{{NameJp}}</td>
+        <td>{{Description}}</td>
+        <td class="text-center">
+            <a href="#" class="btn btn-xs btn-primary btn-edit mr-1" data-id="{{Id}}">
+                <i class="fe-edit"></i>
+            </a>
+            <a href="#" class="btn btn-xs btn-danger btn-delete" data-id="{{Id}}">
+                <i class="fe-trash-2"></i>
+            </a>
+        </td>
+    </tr>
+</script>
+
+<!-- Modal -->
+@await Html.PartialAsync("_AddMstTeamModal")

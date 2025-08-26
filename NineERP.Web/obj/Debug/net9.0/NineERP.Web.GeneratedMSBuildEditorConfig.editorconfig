@@ -1,0 +1,705 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = NineERP.Web
+build_property.RootNamespace = NineERP.Web
+build_property.ProjectDir = D:\HKDN\NineERP_2025\NineERP.Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = D:\HKDN\NineERP_2025\NineERP.Web
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/AuditLogs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVkaXRMb2dzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/AuditLogs/_DetailAuditLogModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVkaXRMb2dzXF9EZXRhaWxBdWRpdExvZ01vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Customers/_AddCustomerModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXF9BZGRDdXN0b21lck1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Departments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Departments/_AddDepartmentModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcX0FkZERlcGFydG1lbnRNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Departments/_EditDepartmentModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcX0VkaXREZXBhcnRtZW50TW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/EmailSettings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxTZXR0aW5nc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/EmailSettings/_GmailOAuthSettingsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxTZXR0aW5nc1xfR21haWxPQXV0aFNldHRpbmdzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/EmailSettings/_MicrosoftOAuthSettingsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxTZXR0aW5nc1xfTWljcm9zb2Z0T0F1dGhTZXR0aW5nc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/EmailSettings/_SMTPSettingsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxTZXR0aW5nc1xfU01UUFNldHRpbmdzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Employees/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Employees/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Employees/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Employees/_AddEmployeeModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXF9BZGRFbXBsb3llZU1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Error/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcQWNjZXNzRGVuaWVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Error/Error404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I0MDQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Error/Error500.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I1MDAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/ForgotPassword/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9yZ290UGFzc3dvcmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/ForgotPassword/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9yZ290UGFzc3dvcmRcUmVzZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/GeneralSettings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbFNldHRpbmdzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/GeneralSettings/_GeneralInformationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbFNldHRpbmdzXF9HZW5lcmFsSW5mb3JtYXRpb25QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/GeneralSettings/_SystemSettingInformationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbFNldHRpbmdzXF9TeXN0ZW1TZXR0aW5nSW5mb3JtYXRpb25QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/GeneralSettings/_TaxInformationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbFNldHRpbmdzXF9UYXhJbmZvcm1hdGlvblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/IntegrationSettings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZWdyYXRpb25TZXR0aW5nc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/IntegrationSettings/_GoogleCalendarSettingsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZWdyYXRpb25TZXR0aW5nc1xfR29vZ2xlQ2FsZW5kYXJTZXR0aW5nc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/IntegrationSettings/_GoogleDriveSettingsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZWdyYXRpb25TZXR0aW5nc1xfR29vZ2xlRHJpdmVTZXR0aW5nc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/IntegrationSettings/_ReCaptchaSettingsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZWdyYXRpb25TZXR0aW5nc1xfUmVDYXB0Y2hhU2V0dGluZ3NQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/IntegrationSettings/_S3SettingsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZWdyYXRpb25TZXR0aW5nc1xfUzNTZXR0aW5nc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/KbnContractTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2JuQ29udHJhY3RUeXBlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/KbnContractTypes/_AddContractTypeModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2JuQ29udHJhY3RUeXBlc1xfQWRkQ29udHJhY3RUeXBlTW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/KbnDeviceTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2JuRGV2aWNlVHlwZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/KbnDeviceTypes/_AddKbnDeviceTypeModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2JuRGV2aWNlVHlwZXNcX0FkZEtibkRldmljZVR5cGVNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/KbnEmployeeStatus/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2JuRW1wbG95ZWVTdGF0dXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/KbnEmployeeStatus/_AddKbnEmployeeStatusModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2JuRW1wbG95ZWVTdGF0dXNcX0FkZEtibkVtcGxveWVlU3RhdHVzTW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/KbnHolidayTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2JuSG9saWRheVR5cGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/KbnHolidayTypes/_AddKbnHolidayTypeModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2JuSG9saWRheVR5cGVzXF9BZGRLYm5Ib2xpZGF5VHlwZU1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/KbnLeaveTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2JuTGVhdmVUeXBlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/KbnLeaveTypes/_AddKbnLeaveTypeModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2JuTGVhdmVUeXBlc1xfQWRkS2JuTGVhdmVUeXBlTW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/MstProgrammingLanguages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0UHJvZ3JhbW1pbmdMYW5ndWFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/MstProgrammingLanguages/_AddMstProgrammingLanguageModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0UHJvZ3JhbW1pbmdMYW5ndWFnZXNcX0FkZE1zdFByb2dyYW1taW5nTGFuZ3VhZ2VNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/MstShifts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0U2hpZnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/MstShifts/_AddMstShiftModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0U2hpZnRzXF9BZGRNc3RTaGlmdE1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/MstShifts/_ShiftEmployeeDetailPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0U2hpZnRzXF9TaGlmdEVtcGxveWVlRGV0YWlsUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/MstTeams/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0VGVhbXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/MstTeams/_AddMstTeamModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0VGVhbXNcX0FkZE1zdFRlYW1Nb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Roles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Roles/_AddRoleModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcX0FkZFJvbGVNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Roles/_AssignPermission.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcX0Fzc2lnblBlcm1pc3Npb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Shared/_BreadcrumbPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CcmVhZGNydW1iUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Shared/_LeftSideMenuPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MZWZ0U2lkZU1lbnVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Shared/_PaginationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdpbmF0aW9uUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Shared/_TopBarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ub3BCYXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/Users/_AddUserModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcX0FkZFVzZXJNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Controllers/ForgotPasswordController.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Controllers\ForgotPasswordController.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Controllers/ForgotPasswordController.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Controllers\ForgotPasswordController.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Controllers/LoginController.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Controllers\LoginController.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Controllers/LoginController.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Controllers\LoginController.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/AuditLogs/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\AuditLogs\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/AuditLogs/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\AuditLogs\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/AuditLogs/_DetailAuditLogModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\AuditLogs\_DetailAuditLogModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/AuditLogs/_DetailAuditLogModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\AuditLogs\_DetailAuditLogModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Customers/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Customers\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Customers/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Customers\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Customers/_AddCustomerModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Customers\_AddCustomerModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Customers/_AddCustomerModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Customers\_AddCustomerModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Departments/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Departments\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Departments/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Departments\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Departments/_AddDepartmentModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Departments\_AddDepartmentModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Departments/_AddDepartmentModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Departments\_AddDepartmentModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Departments/_EditDepartmentModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Departments\_EditDepartmentModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Departments/_EditDepartmentModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Departments\_EditDepartmentModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/EmailSettings/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\EmailSettings\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/EmailSettings/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\EmailSettings\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/EmailSettings/_GmailOAuthSettingsPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\EmailSettings\_GmailOAuthSettingsPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/EmailSettings/_GmailOAuthSettingsPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\EmailSettings\_GmailOAuthSettingsPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/EmailSettings/_MicrosoftOAuthSettingsPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\EmailSettings\_MicrosoftOAuthSettingsPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/EmailSettings/_MicrosoftOAuthSettingsPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\EmailSettings\_MicrosoftOAuthSettingsPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/EmailSettings/_SMTPSettingsPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\EmailSettings\_SMTPSettingsPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/EmailSettings/_SMTPSettingsPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\EmailSettings\_SMTPSettingsPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Employees/Detail.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Employees\Detail.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Employees/Detail.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Employees\Detail.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Employees/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Employees\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Employees/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Employees\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Employees/_AddEmployeeModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Employees\_AddEmployeeModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Employees/_AddEmployeeModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Employees\_AddEmployeeModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/ForgotPassword/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\ForgotPassword\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/ForgotPassword/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\ForgotPassword\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/ForgotPassword/ResetPassword.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\ForgotPassword\ResetPassword.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/ForgotPassword/ResetPassword.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\ForgotPassword\ResetPassword.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/GeneralSettings/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\GeneralSettings\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/GeneralSettings/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\GeneralSettings\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/GeneralSettings/_GeneralInformationPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\GeneralSettings\_GeneralInformationPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/GeneralSettings/_GeneralInformationPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\GeneralSettings\_GeneralInformationPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/GeneralSettings/_SystemSettingInformationPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\GeneralSettings\_SystemSettingInformationPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/GeneralSettings/_SystemSettingInformationPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\GeneralSettings\_SystemSettingInformationPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/GeneralSettings/_TaxInformationPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\GeneralSettings\_TaxInformationPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/GeneralSettings/_TaxInformationPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\GeneralSettings\_TaxInformationPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/IntegrationSettings/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\IntegrationSettings\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/IntegrationSettings/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\IntegrationSettings\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/IntegrationSettings/_GoogleCalendarSettingsPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\IntegrationSettings\_GoogleCalendarSettingsPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/IntegrationSettings/_GoogleCalendarSettingsPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\IntegrationSettings\_GoogleCalendarSettingsPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/IntegrationSettings/_GoogleDriveSettingsPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\IntegrationSettings\_GoogleDriveSettingsPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/IntegrationSettings/_GoogleDriveSettingsPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\IntegrationSettings\_GoogleDriveSettingsPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/IntegrationSettings/_ReCaptchaSettingsPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\IntegrationSettings\_ReCaptchaSettingsPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/IntegrationSettings/_ReCaptchaSettingsPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\IntegrationSettings\_ReCaptchaSettingsPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/IntegrationSettings/_S3SettingsPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\IntegrationSettings\_S3SettingsPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/IntegrationSettings/_S3SettingsPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\IntegrationSettings\_S3SettingsPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnContractTypes/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnContractTypes\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnContractTypes/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnContractTypes\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnContractTypes/_AddContractTypeModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnContractTypes\_AddContractTypeModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnContractTypes/_AddContractTypeModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnContractTypes\_AddContractTypeModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnDeviceTypes/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnDeviceTypes\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnDeviceTypes/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnDeviceTypes\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnDeviceTypes/_AddKbnDeviceTypeModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnDeviceTypes\_AddKbnDeviceTypeModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnDeviceTypes/_AddKbnDeviceTypeModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnDeviceTypes\_AddKbnDeviceTypeModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnEmployeeStatus/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnEmployeeStatus\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnEmployeeStatus/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnEmployeeStatus\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnEmployeeStatus/_AddKbnEmployeeStatusModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnEmployeeStatus\_AddKbnEmployeeStatusModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnEmployeeStatus/_AddKbnEmployeeStatusModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnEmployeeStatus\_AddKbnEmployeeStatusModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnHolidayTypes/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnHolidayTypes\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnHolidayTypes/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnHolidayTypes\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnHolidayTypes/_AddKbnHolidayTypeModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnHolidayTypes\_AddKbnHolidayTypeModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnHolidayTypes/_AddKbnHolidayTypeModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnHolidayTypes\_AddKbnHolidayTypeModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnLeaveTypes/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnLeaveTypes\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnLeaveTypes/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnLeaveTypes\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnLeaveTypes/_AddKbnLeaveTypeModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnLeaveTypes\_AddKbnLeaveTypeModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/KbnLeaveTypes/_AddKbnLeaveTypeModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\KbnLeaveTypes\_AddKbnLeaveTypeModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Login/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Login\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Login/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Login\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstProgrammingLanguages/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstProgrammingLanguages\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstProgrammingLanguages/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstProgrammingLanguages\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstProgrammingLanguages/_AddMstProgrammingLanguageModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstProgrammingLanguages\_AddMstProgrammingLanguageModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstProgrammingLanguages/_AddMstProgrammingLanguageModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstProgrammingLanguages\_AddMstProgrammingLanguageModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstShifts/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstShifts\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstShifts/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstShifts\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstShifts/_AddMstShiftModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstShifts\_AddMstShiftModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstShifts/_AddMstShiftModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstShifts\_AddMstShiftModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstShifts/_ShiftEmployeeDetailPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstShifts\_ShiftEmployeeDetailPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstShifts/_ShiftEmployeeDetailPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstShifts\_ShiftEmployeeDetailPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstTeams/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstTeams\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstTeams/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstTeams\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstTeams/_AddMstTeamModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstTeams\_AddMstTeamModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/MstTeams/_AddMstTeamModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\MstTeams\_AddMstTeamModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Roles/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Roles\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Roles/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Roles\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Roles/_AddRoleModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Roles\_AddRoleModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Roles/_AddRoleModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Roles\_AddRoleModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Roles/_AssignPermission.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Roles\_AssignPermission.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Roles/_AssignPermission.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Roles\_AssignPermission.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Shared/_Layout.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Shared\_Layout.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Shared/_Layout.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Shared\_Layout.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Shared/_LeftSideMenuPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Shared\_LeftSideMenuPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Shared/_LeftSideMenuPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Shared\_LeftSideMenuPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Shared/_PaginationPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Shared\_PaginationPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Shared/_PaginationPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Shared\_PaginationPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Shared/_TopBarPartial.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Shared\_TopBarPartial.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Shared/_TopBarPartial.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Shared\_TopBarPartial.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Users/Index.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Users\Index.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Users/Index.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Users\Index.vi.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Users/_AddUserModal.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Users\_AddUserModal.en.resx
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HKDN/NineERP_2025/NineERP.Web/Resources/Views/Users/_AddUserModal.vi.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Views\Users\_AddUserModal.vi.resx
+build_metadata.AdditionalFiles.CssScope = 

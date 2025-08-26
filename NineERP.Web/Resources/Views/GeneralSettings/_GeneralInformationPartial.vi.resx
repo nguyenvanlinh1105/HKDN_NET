@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Tax Code" xml:space="preserve"><value>Mã số thuế</value></data>
+<data name="Short Name" xml:space="preserve"><value>Tên viết tắt</value></data>
+<data name="Company Name" xml:space="preserve"><value>Tên công ty</value></data>
+<data name="Phone Number" xml:space="preserve"><value>Số điện thoại</value></data>
+<data name="Email" xml:space="preserve"><value>Email</value></data>
+<data name="Address" xml:space="preserve"><value>Địa chỉ</value></data>
+<data name="Bank Name" xml:space="preserve"><value>Tên ngân hàng</value></data>
+<data name="Bank Account Number" xml:space="preserve"><value>Số tài khoản</value></data>
+<data name="Bank Account Name" xml:space="preserve"><value>Chủ tài khoản</value></data>
+<data name="Logo Company" xml:space="preserve"><value>Logo công ty</value></data>
+
+</root>

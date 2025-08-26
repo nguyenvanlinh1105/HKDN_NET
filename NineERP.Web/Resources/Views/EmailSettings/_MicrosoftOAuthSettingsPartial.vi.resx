@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Microsoft_ClientId"><value>Client ID</value></data>
+<data name="Microsoft_ClientSecret"><value>Client Secret</value></data>
+<data name="Microsoft_TenantId"><value>Tenant ID</value></data>
+<data name="Microsoft_RefreshToken"><value>Refresh Token</value></data>
+<data name="SenderEmail"><value>Email người gửi</value></data>
+<data name="SenderName"><value>Tên người gửi</value></data>
+<data name="Microsoft_Required"><value>Vui lòng nhập đầy đủ thông tin Microsoft OAuth</value></data>
+s
+</root>

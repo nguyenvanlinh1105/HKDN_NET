@@ -1,0 +1,35 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label for="SmtpHost">@Localizer["SMTP Host"] <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="SmtpHost" name="SmtpHost">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="SmtpPort">@Localizer["SMTP Port"] <span class="text-danger">*</span></label>
+        <input type="number" class="form-control" id="SmtpPort" name="SmtpPort">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="EnableSsl">@Localizer["Enable SSL"]</label>
+        <select class="form-control" id="EnableSsl" name="EnableSsl">
+            <option value="true">@Localizer["Yes"]</option>
+            <option value="false">@Localizer["No"]</option>
+        </select>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="SenderEmail">@Localizer["Sender Email"] <span class="text-danger">*</span></label>
+        <input type="email" class="form-control" id="SenderEmail" name="SenderEmail">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="SenderName">@Localizer["Sender Name"]</label>
+        <input type="text" class="form-control" id="SenderName" name="SenderName">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="SmtpUser">@Localizer["SMTP Username"] <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="SmtpUser" name="SmtpUser">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="SmtpPassword">@Localizer["SMTP Password"] <span class="text-danger">*</span></label>
+        <input type="password" class="form-control" id="SmtpPassword" name="SmtpPassword">
+    </div>
+</div>

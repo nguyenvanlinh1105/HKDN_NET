@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Settings" xml:space="preserve"><value>Integration Settings</value></data>
+<data name="General Information" xml:space="preserve"><value>General Information</value></data>
+<data name="Save" xml:space="preserve"><value>Save</value></data>
+<data name="RequiredFields" xml:space="preserve"><value>Please complete all required fields.</value></data>
+<data name="InvalidJson" xml:space="preserve"><value>Invalid JSON format.</value></data>
+<data name="InvalidBucketName" xml:space="preserve"><value>Invalid bucket name.</value></data>
+<data name="InvalidRegion" xml:space="preserve"><value>Invalid region format.</value></data>
+<data name="SaveSuccess" xml:space="preserve"><value>Settings saved successfully.</value></data>
+<data name="SaveFailed" xml:space="preserve"><value>Failed to save settings.</value></data>
+<data name="SaveError" xml:space="preserve"><value>An error occurred while saving settings.</value></data>
+<data name="LoadError" xml:space="preserve"><value>Unable to load integration settings.</value></data>
+
+<data name="UploadSuccess" xml:space="preserve"><value>File uploaded successfully.</value></data>
+<data name="UploadFailed" xml:space="preserve"><value>File upload failed.</value></data>
+<data name="UploadError" xml:space="preserve"><value>An error occurred during file upload.</value></data>
+<data name="SelectFileFirst" xml:space="preserve"><value>Please select a file to upload.</value></data>
+<data name="ViewFile" xml:space="preserve"><value>View file</value></data>
+</root>

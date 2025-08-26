@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="LeaveTypeManagement" xml:space="preserve">
+    <value>Leave Type Management</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search name..." xml:space="preserve">
+    <value>Search name</value>
+  </data>
+  <data name="KbnLeaveTypeName, Description..." xml:space="preserve">
+    <value>Leave Type, Description...</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="LeaveTypeFlag" xml:space="preserve">
+    <value>Leave Type</value>
+  </data>
+  <data name="Acronym" xml:space="preserve">
+    <value>Acronym</value>
+  </data>
+  <data name="NameVi" xml:space="preserve">
+    <value>Vietnamese Name</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>English Name</value>
+  </data>
+  <data name="NameJp" xml:space="preserve">
+    <value>Japanese Name</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve">
+    <value>Delete leave type?</value>
+  </data>
+  <data name="ConfirmDeleteText" xml:space="preserve">
+    <value>Are you sure you want to delete this leave type?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ANNUAL_LEAVE" xml:space="preserve">
+    <value>Annual leave</value>
+  </data>
+  <data name="UNPAID_LEAVE" xml:space="preserve">
+    <value>Unpaid leave</value>
+  </data>
+  <data name="GO_IN_OUT" xml:space="preserve">
+    <value>Go In Out</value>
+  </data>
+  <data name="AddNewKbnLeaveType" xml:space="preserve">
+    <value>Add new leave type</value>
+  </data>
+  <data name="EditKbnLeaveType" xml:space="preserve">
+    <value>Edit leave type</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>No records found.</value>
+  </data>
+</root>

@@ -1,0 +1,4 @@
+/* Thêm vào file layout hoặc riêng cho setting */
+.is-invalid {
+    border-color: #dc3545 !important;
+}

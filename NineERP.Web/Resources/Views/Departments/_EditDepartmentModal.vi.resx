@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, ...</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, ...</value></resheader>
+
+  <data name="Add New Department" xml:space="preserve"><value>Thêm phòng ban mới</value></data>
+  <data name="Edit Department" xml:space="preserve"><value>Chỉnh sửa phòng ban</value></data>
+  <data name="NameVi" xml:space="preserve"><value>Tên (Tiếng Việt)</value></data>
+  <data name="NameEn" xml:space="preserve"><value>Tên (Tiếng Anh)</value></data>
+  <data name="NameJa" xml:space="preserve"><value>Tên (Tiếng Nhật)</value></data>
+  <data name="Enter NameVi" xml:space="preserve"><value>Nhập tên phòng ban tiếng Việt</value></data>
+  <data name="Enter NameEn" xml:space="preserve"><value>Nhập tên phòng ban tiếng Anh</value></data>
+  <data name="Enter NameJa" xml:space="preserve"><value>Nhập tên phòng ban tiếng Nhật</value></data>
+  <data name="Parent Department" xml:space="preserve"><value>Phòng ban cha</value></data>
+  <data name="Root Department" xml:space="preserve"><value>Phòng ban gốc</value></data>
+  <data name="Description" xml:space="preserve"><value>Mô tả</value></data>
+  <data name="Save" xml:space="preserve"><value>Lưu</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Hủy</value></data>
+  <data name="Close" xml:space="preserve"><value>Đóng</value></data>
+</root>

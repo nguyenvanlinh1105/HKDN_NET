@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="MstProgrammingLanguageManagement" xml:space="preserve">
+    <value>Programming Languages Management</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search name..." xml:space="preserve">
+    <value>Search name</value>
+  </data>
+  <data name="MstProgrammingLanguage, Description..." xml:space="preserve">
+    <value>Programming Language, Description...</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="NameVi" xml:space="preserve">
+    <value>Vietnamese Name</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>English Name</value>
+  </data>
+  <data name="NameJp" xml:space="preserve">
+    <value>Japanese Name</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve">
+    <value>Delete programming language?</value>
+  </data>
+  <data name="ConfirmDeleteText" xml:space="preserve">
+    <value>Are you sure you want to delete this programming language?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="AddNewMstProgrammingLanguage" xml:space="preserve">
+    <value>Add New Programming Language</value>
+  </data>
+  <data name="EditMstProgrammingLanguage" xml:space="preserve">
+    <value>Edit Programming Language</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>No records found.</value>
+  </data>
+</root>

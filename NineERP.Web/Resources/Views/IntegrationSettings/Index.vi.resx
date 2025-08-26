@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Settings" xml:space="preserve"><value>Cấu hình tích hợp</value></data>
+<data name="General Information" xml:space="preserve"><value>Thông tin chung</value></data>
+<data name="Save" xml:space="preserve"><value>Lưu</value></data>
+<data name="RequiredFields" xml:space="preserve"><value>Vui lòng nhập đầy đủ thông tin bắt buộc.</value></data>
+<data name="InvalidJson" xml:space="preserve"><value>Dữ liệu JSON không hợp lệ.</value></data>
+<data name="InvalidBucketName" xml:space="preserve"><value>Tên bucket không hợp lệ.</value></data>
+<data name="InvalidRegion" xml:space="preserve"><value>Region không hợp lệ.</value></data>
+<data name="SaveSuccess" xml:space="preserve"><value>Lưu cấu hình thành công.</value></data>
+<data name="SaveFailed" xml:space="preserve"><value>Lưu cấu hình thất bại.</value></data>
+<data name="SaveError" xml:space="preserve"><value>Có lỗi xảy ra khi lưu cấu hình.</value></data>
+<data name="LoadError" xml:space="preserve"><value>Không thể tải dữ liệu cấu hình.</value></data>
+<data name="UploadSuccess" xml:space="preserve"><value>Tải file lên thành công.</value></data>
+<data name="UploadFailed" xml:space="preserve"><value>Tải file thất bại.</value></data>
+<data name="UploadError" xml:space="preserve"><value>Có lỗi xảy ra khi tải file.</value></data>
+<data name="SelectFileFirst" xml:space="preserve"><value>Vui lòng chọn file để upload thử.</value></data>
+<data name="ViewFile" xml:space="preserve"><value>Xem file</value></data>
+</root>

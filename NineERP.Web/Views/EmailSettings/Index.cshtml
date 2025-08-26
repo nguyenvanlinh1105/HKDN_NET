@@ -1,0 +1,105 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Email Settings"];
+    var breadcrumb = new List<(string Text, string Url)>
+    {
+        (Localizer["Dashboard"].Value, "/dashboard"),
+        (Localizer["System Management"].Value, null!)
+    };
+}
+
+@section Scripts {
+    <script src="~/admin-app/controllers/emailsettings/index.js" asp-append-version="true"></script>
+    <script>
+        window.localization = {
+            SaveSuccess: '@Localizer["SaveSuccess"]',
+            SaveFailed: '@Localizer["SaveFailed"]',
+            SaveError: '@Localizer["SaveError"]',
+            InvalidEmail: '@Localizer["InvalidEmail"]',
+            Required_SenderEmail: '@Localizer["Required_SenderEmail"]',
+            Required_SenderName: '@Localizer["Required_SenderName"]',
+            Required_SmtpHost: '@Localizer["Required_SmtpHost"]',
+            Required_SmtpPort: '@Localizer["Required_SmtpPort"]',
+            Required_SmtpUser: '@Localizer["Required_SmtpUser"]',
+            Required_SmtpPassword: '@Localizer["Required_SmtpPassword"]',
+            Required_ClientId: '@Localizer["Required_ClientId"]',
+            Required_ClientSecret: '@Localizer["Required_ClientSecret"]',
+            Required_RefreshToken: '@Localizer["Required_RefreshToken"]',
+            Required_TenantId: '@Localizer["Required_TenantId"]',
+            Required_TestEmail: '@Localizer["Required_TestEmail"]',
+            SendTestSuccess: '@Localizer["SendTestSuccess"]',
+            SendTestFailed: '@Localizer["SendTestFailed"]',
+            SendTestError: '@Localizer["SendTestError"]',
+            InvalidFiscalYearFormat: '@Localizer["InvalidFiscalYearFormat"]',
+            LoadError: '@Localizer["LoadError"]',
+        };
+
+        const emailSettingsController = new EmailSettingsController();
+        emailSettingsController.initialize();
+    </script>
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex justify-content-between align-items-center">
+            <h4 class="page-title">@ViewData["Title"]</h4>
+            <div>@await Html.PartialAsync("_BreadcrumbPartial", breadcrumb)</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <ul class="nav nav-pills navtab-bg">
+                <li class="nav-item">
+                    <a href="#smtp-tab" data-toggle="tab" aria-selected="true" class="nav-link active ml-0">
+                        SMTP
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gmail-oauth-tab" data-toggle="tab" aria-selected="false" class="nav-link">
+                        Gmail OAuth 2.0
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#microsoft-oauth-tab" data-toggle="tab" aria-selected="false" class="nav-link">
+                        Microsoft OAuth 2.0
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="smtp-tab">
+                    @await Html.PartialAsync("_SMTPSettingsPartial")
+                </div>
+                <div class="tab-pane fade" id="gmail-oauth-tab">
+                    @await Html.PartialAsync("_GmailOAuthSettingsPartial")
+                </div>
+                <div class="tab-pane fade" id="microsoft-oauth-tab">
+                    @await Html.PartialAsync("_MicrosoftOAuthSettingsPartial")
+                </div>
+            </div>
+            <h5 class="header-title mb-3">@Localizer["Test Email"]</h5>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <input type="email" id="TestEmail" class="form-control" placeholder="example@example.com">
+                </div>
+                <div class="col-md-4">
+                    <button id="btn-send-test-email" class="btn btn-info waves-effect waves-light">
+                        <i class="mdi mdi-email-check-outline"></i> @Localizer["Send Test Email"]
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-right">
+                <button id="btn-save-email-settings" class="btn btn-success waves-effect waves-light">
+                    <span class="spinner-border spinner-border-sm d-none" id="spinner-email" role="status" aria-hidden="true"></span>
+                    <i class="mdi mdi-content-save"></i> @Localizer["Save"]
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

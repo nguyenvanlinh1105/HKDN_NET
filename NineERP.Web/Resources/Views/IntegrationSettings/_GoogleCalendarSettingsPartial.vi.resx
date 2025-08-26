@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="ClientId" xml:space="preserve"><value>Client ID</value></data>
+<data name="ClientSecret" xml:space="preserve"><value>Client Secret</value></data>
+<data name="IsActive" xml:space="preserve"><value>Đang sử dụng</value></data>
+</root>

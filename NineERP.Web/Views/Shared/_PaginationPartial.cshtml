@@ -1,0 +1,22 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="row align-items-center justify-content-between mt-2">
+    <div class="col-md-auto">
+        <div class="form-inline">
+            <label for="ddl-show-page" class="mr-2 font-weight-semibold">@Localizer["Show"]:</label>
+            <select id="ddl-show-page" class="custom-select custom-select-sm mr-2">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+            <span class="text-muted">@Localizer["Total"]: <strong id="lbl-total-records" class="text-dark"></strong></span>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <nav aria-label="Page navigation">
+            <ul id="paginationUL" class="pagination justify-content-end pagination-sm mb-0"></ul>
+        </nav>
+    </div>
+</div>

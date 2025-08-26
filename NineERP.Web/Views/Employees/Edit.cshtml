@@ -1,0 +1,551 @@
+﻿@model NineERP.Application.Dtos.Employees.EmployeeDetailDto
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["EditEmployee"];
+    string dateFormat = System.Globalization.CultureInfo.CurrentUICulture.Name.StartsWith("vi") ? "dd/MM/yyyy" : "yyyy/MM/dd";
+    Func<object?, string> display = val => val == null || string.IsNullOrEmpty(val.ToString()) ? "" : val.ToString()!;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/assets/libs/select2/select2.min.css" />
+    <link rel="stylesheet" href="~/assets/libs/flatpickr/flatpickr.min.css" />
+    <link rel="stylesheet" href="~/admin-app/controllers/employee/edit.css" />
+}
+@section Scripts {
+    <script src="~/assets/libs/pdfjs/2.14.305/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = '/assets/libs/pdfjs/2.14.305/pdf.worker.min.js';
+    </script>
+    <script src="~/assets/libs/select2/select2.min.js" asp-append-version="true"></script>
+    <script src="~/assets/libs/flatpickr/flatpickr.js" asp-append-version="true"></script>
+    <script src="~/assets/libs/moment/moment.min.js" asp-append-version="true"></script>
+    <script src="~/admin-app/controllers/employee/edit.js" asp-append-version="true"></script>
+    <script>
+        window.localization = {
+            SelectOption: "@Localizer["SelectOption"]",
+            Cash: "@Localizer["Cash"]",
+            BankTransfer: "@Localizer["BankTransfer"]",
+            UpdateSuccess: "@Localizer["UpdateSuccess"]",
+            UpdateFailed: "@Localizer["UpdateFailed"]"
+        };
+        window.employeeModel = {
+            Id: @Model.Id,
+            EmployeeNo: "@Model.EmployeeNo",
+            DepartmentId: @(Model.DepartmentId?.ToString() ?? "null"),
+            PositionId: @(Model.PositionId?.ToString() ?? "null"),
+            ContractTypeId: @(Model.ContractTypeId?.ToString() ?? "null"),
+            EmployeeStatusId: @(Model.EmployeeStatusId?.ToString() ?? "null"),
+            PaymentType: @(Model.SalaryInfo?.PaymentType ?? 0)
+        };
+        window.originalModel = @Html.Raw(Json.Serialize(Model));
+        const employeeId = @Model.Id;
+        var employeeEdit = new EmployeeEdit();
+        $(function () {
+            employeeEdit.initialize();
+        });
+    </script>
+}
+
+<div class="row">
+    <div class="col">
+        <h4 class="page-title">@ViewData["Title"]</h4>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/dashboard">@Localizer["Dashboard"]</a></li>
+                <li class="breadcrumb-item"><a href="/employees">@Localizer["EmployeeManagement"]</a></li>
+                <li class="breadcrumb-item active">@Model.FullName</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="mb-2 text-right">
+    <button type="submit" class="btn btn-outline-primary">
+        <i class="mdi mdi-content-save"></i> 
+    </button>
+    <a href="javascript:void(0)" class="btn btn-outline-secondary" id="btn-back-employee"
+       title="@Localizer["BackToPreviousPage"]" data-toggle="tooltip">
+        <i class="mdi mdi-arrow-left"></i>
+    </a>
+</div>
+<form id="form-edit-employee" enctype="multipart/form-data">
+    <div class="card shadow-sm mb-4">
+        <div class="card-body d-flex align-items-center">
+            <div class="position-relative">
+                <img id="avatarPreview" src="/preview/avatar/@Model.ImageURL" class="rounded-circle border" width="100" height="100"
+                    onerror="this.src='/assets/images/users/no-avatar.png'" />
+                <input type="file" id="imageUpload" name="Avatar" class="d-none" accept="image/*" />
+                <label for="imageUpload" class="position-absolute" style="bottom: 0; right: 0; cursor: pointer;">
+                    <i class="mdi mdi-camera-outline bg-light rounded-circle p-1"></i>
+                </label>
+            </div>
+            <div class="ml-3 flex-grow-1">
+                <div class="form-row">
+                    <div class="col-auto">
+                        <label class="font-weight-bold">@Localizer["EmployeeNo"]</label>
+                        <input type="text" class="form-control" name="EmployeeNo" value="@Model.EmployeeNo" readonly />
+                    </div>
+                    <div class="col">
+                        <label class="font-weight-bold">@Localizer["FullName"]</label>
+                        <input type="text" class="form-control" name="FullName" value="@Model.FullName" />
+                    </div>
+                </div>
+                <div class="form-row mt-2">
+                    <div class="col-auto">
+                        <label class="font-weight-bold">@Localizer["Birthday"]</label>
+                        <input type="text" class="flatpickr-date form-control" name="Birthday"
+                            value="@Model.Birthday?.ToString(dateFormat)" />
+                    </div>
+                    <div class="col-auto">
+                        <label class="font-weight-bold">@Localizer["PhoneNo"]</label>
+                        <input type="tel" name="PhoneNo" maxlength="15" pattern="^[0-9+]{9,15}$" class="form-control"
+                            value="@Model.PhoneNo" title="@Localizer["PhoneNoTitle"]" />
+                    </div>
+                    <div class="col-auto">
+                        <label class="font-weight-bold">@Localizer["Email"]</label>
+                        <input type="email" name="Email" class="form-control" maxlength="100" value="@Model.Email"
+                            title="@Localizer["EmailTitle"]" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs" id="employeeTabs">
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab"
+                href="#general">@Localizer["GeneralInformation"]</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab"
+                href="#education">@Localizer["EducationInformation"]</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#bank">@Localizer["BankAndSalary"]</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#emergency">@Localizer["EmergencyContact"]</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#identity">@Localizer["Identity"]</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#document">@Localizer["Document"]</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="general">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card border p-3 mb-4 h-100">
+                        <h5 class="text-primary">@Localizer["PersonalInformation"]</h5>
+
+                        <div class="form-group">
+                            <label>@Localizer["NickName"]</label>
+                            <input type="text" name="NickName" value="@Model.NickName" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["PlaceOfBirth"]</label>
+                            <textarea class="form-control" name="PlaceOfBirth" rows="2">@Model.PlaceOfBirth</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["Gender"]</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gender" value="0" @(Model.Gender == 0 ? "checked" : "") />
+                                <label class="form-check-label">@Localizer["Male"]</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gender" value="1" @(Model.Gender == 1 ? "checked" : "") />
+                                <label class="form-check-label">@Localizer["Female"]</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gender" value="2" @(Model.Gender == 2 ? "checked" : "") />
+                                <label class="form-check-label">@Localizer["Other"]</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["MaritalStatus"]</label>
+                            <select name="MaritalStatus" class="form-control">
+                                <option value="0" selected="@(Model.MaritalStatus == 0 ? "selected" : null)">
+                                    @Localizer["Single"]</option>
+                                <option value="1" selected="@(Model.MaritalStatus == 1 ? "selected" : null)">
+                                    @Localizer["Married"]</option>
+                                <option value="2" selected="@(Model.MaritalStatus == 2 ? "selected" : null)">
+                                    @Localizer["Divorced"]</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["NumberOfChildren"]</label>
+                            <input type="number" name="NumberChild" value="@Model.NumberChild" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["Address"]</label>
+                            <textarea class="form-control" name="Address" rows="2">@Model.Address</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border p-3 mb-4 h-100">
+                        <h5 class="text-success">@Localizer["WorkInfo"]</h5>
+                        <div class="form-group">
+                            <label>@Localizer["EmployeeStatus"]</label>
+                            <select name="EmployeeStatusId" id="EmployeeStatusId" class="form-control select2"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["Department"]</label>
+                            <select name="DepartmentId" class="form-control select2"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["Position"]</label>
+                            <select name="PositionId" class="form-control select2"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["WorkingFrom"] - @Localizer["WorkingTo"]</label>
+                            <div class="input-group">
+                                <input type="text" name="WorkingDateFrom"
+                                    value="@Model.WorkingDateFrom?.ToString(dateFormat)"
+                                    class="form-control flatpickr-date" />
+                                <input type="text" name="WorkingDateTo"
+                                    value="@Model.WorkingDateTo?.ToString(dateFormat)"
+                                    class="form-control flatpickr-date ml-2" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["ContractNumber"]</label>
+                            <input type="text" name="ContractNumber" value="@Model.ContractNumber"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["ContractType"]</label>
+                            <select name="ContractTypeId" class="form-control select2"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>@Localizer["ContractFrom"] - @Localizer["ContractTo"]</label>
+                            <div class="input-group">
+                                <input type="text" name="ContractFrom" value="@Model.ContractFrom?.ToString(dateFormat)"
+                                    class="form-control flatpickr-date" />
+                                <input type="text" name="ContractTo" value="@Model.ContractTo?.ToString(dateFormat)"
+                                    class="form-control flatpickr-date ml-2" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="education">
+            <div class="card border p-3 mb-4">
+                <h5 class="text-primary">@Localizer["EducationInformation"]</h5>
+
+                <div class="form-group">
+                    <label>@Localizer["EducationLevel"]</label>
+                    <input type="text" class="form-control" name="EducationLevel" value="@Model.EducationLevel" />
+                </div>
+
+                <div class="form-group">
+                    <label>@Localizer["SoftSkill"]</label>
+                    <textarea class="form-control" name="SoftSkill" rows="2">@Model.SoftSkill</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>@Localizer["BusinessExperience"]</label>
+                    <textarea class="form-control" name="BusinessExp" rows="3">@Model.BusinessExp</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="bank">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card border p-3 mb-4 h-100">
+                        <h5 class="text-primary">@Localizer["BankAndPaymentInfo"]</h5>
+
+                        <div class="form-group">
+                            <label>@Localizer["BasicSalary"]</label>
+                            <input type="text" class="form-control" name="SalaryBasic"
+                                   value="@(Model.SalaryInfo?.SalaryBasic?.ToString("#,##0") ?? "")" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>@Localizer["GrossSalary"]</label>
+                            <input type="text" class="form-control" name="SalaryGross"
+                                   value="@(Model.SalaryInfo?.SalaryGross?.ToString("#,##0") ?? "")" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>@Localizer["BankName"]</label>
+                            <input type="text" class="form-control" name="BankName"
+                                value="@Model.SalaryInfo?.BankName" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>@Localizer["BankAccount"]</label>
+                            <input type="text" name="BankNumber" class="form-control" maxlength="20"
+                                pattern="^[0-9]{6,20}$" value="@Model.SalaryInfo?.BankNumber"
+                                title="@Localizer["BankNumberTitle"]" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>@Localizer["AccountName"]</label>
+                            <input type="text" class="form-control" name="BankAccountName"
+                                value="@Model.SalaryInfo?.BankAccountName" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>@Localizer["PaymentType"]</label>
+                            <select name="PaymentType" class="form-control select2">
+                                <option value="0" selected="@(Model.SalaryInfo?.PaymentType == 0 ? "selected" : null)">
+                                    @Localizer["Cash"]</option>
+                                <option value="1" selected="@(Model.SalaryInfo?.PaymentType == 1 ? "selected" : null)">
+                                    @Localizer["BankTransfer"]</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border p-3 mb-4 h-100">
+                        <h5 class="text-success">@Localizer["TaxAndInsuranceInfo"]</h5>
+
+                        <div class="form-group">
+                            <label>@Localizer["TaxCode"]</label>
+                            <input type="text" class="form-control" name="TaxCode" value="@Model.TaxCode" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>@Localizer["SocialInsurance"]</label>
+                            <input type="text" class="form-control" name="SocialInsuranceNumber"
+                                value="@Model.SocialInsuranceNumber" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>@Localizer["NumberOfDependents"]</label>
+                            <input type="number" class="form-control" name="NumberOfDependents"
+                                value="@Model.NumberOfDependents" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="emergency">
+            <div class="card border p-3 mb-4">
+                <h5 class="text-danger">@Localizer["EmergencyContact"]</h5>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="border rounded p-3 mb-4" style="border-style: dashed;">
+                            <h6 class="text-primary">@Localizer["PrimaryContact"]</h6>
+
+                            <div class="form-group">
+                                <label>@Localizer["PrimaryContactName"]</label>
+                                <input type="text" class="form-control" name="NamePrimaryContact"
+                                    value="@Model.EmergencyContact?.NamePrimaryContact" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>@Localizer["Relationship"]</label>
+                                <input type="text" class="form-control" name="RelationshipPrimaryContact"
+                                    value="@Model.EmergencyContact?.RelationshipPrimaryContact" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>@Localizer["PhoneNo"]</label>
+                                <input type="text" class="form-control" name="PhoneNoPrimaryContact"
+                                    value="@Model.EmergencyContact?.PhoneNoPrimaryContact" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="border rounded p-3 mb-4" style="border-style: dashed;">
+                            <h6 class="text-success">@Localizer["SecondaryContact"]</h6>
+
+                            <div class="form-group">
+                                <label>@Localizer["SecondaryContactName"]</label>
+                                <input type="text" class="form-control" name="NameSecondaryContact"
+                                    value="@Model.EmergencyContact?.NameSecondaryContact" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>@Localizer["Relationship"]</label>
+                                <input type="text" class="form-control" name="RelationshipSecondaryContact"
+                                    value="@Model.EmergencyContact?.RelationshipSecondaryContact" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>@Localizer["PhoneNo"]</label>
+                                <input type="text" class="form-control" name="PhoneNoSecondaryContact"
+                                    value="@Model.EmergencyContact?.PhoneNoSecondaryContact" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="identity">
+            <div class="card border p-3 mb-4">
+                <h5 class="text-info">@Localizer["CitizenshipCard"]</h5>
+
+                <div class="border rounded p-3 mb-4" style="border-style: dashed;">
+                    <div class="form-group">
+                        <label>@Localizer["CardNumber"]</label>
+                        <input type="text" name="CitizenshipCard" value="@Model.IdentityInfo?.CitizenshipCard"
+                            class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>@Localizer["ProvideDate"]</label>
+                        <input type="text" name="ProvideDateCitizenshipCard"
+                            value="@Model.IdentityInfo?.ProvideDateCitizenshipCard?.ToString(dateFormat)"
+                            class="form-control flatpickr-date" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>@Localizer["ProvidePlace"]</label>
+                        <input type="text" name="ProvidePlaceCitizenshipCard"
+                            value="@Model.IdentityInfo?.ProvidePlaceCitizenshipCard" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="font-weight-bold">@Localizer["FrontSide"]</label>
+                        <div class="position-relative border rounded d-flex align-items-center justify-content-center mb-2"
+                             style="height: 200px; border-style: dashed;">
+                            <img id="imgIdFrontPreview"
+                                 src="@(!string.IsNullOrEmpty(Model.IdentityInfo?.PhotoBeforeCitizenshipCard)
+                                    ? Model.IdentityInfo.PhotoBeforeCitizenshipCard
+                                    : "/assets/images/placeholder.jpg")"
+                                 class="img-fluid"
+                                 style="max-height: 180px;"
+                                 alt="Front Side" />
+                            <input type="file" id="fileFrontSide" name="PhotoBeforeCitizenshipCard" class="d-none" accept="image/*" />
+                            <label for="fileFrontSide" class="position-absolute"
+                                   style="bottom: 10px; right: 10px; cursor: pointer;">
+                                <i class="mdi mdi-pencil-circle-outline bg-white rounded-circle p-2 shadow-sm"
+                                   style="font-size: 20px;"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="font-weight-bold">@Localizer["BackSide"]</label>
+                        <div class="position-relative border rounded d-flex align-items-center justify-content-center mb-2"
+                             style="height: 200px; border-style: dashed;">
+                            <img id="imgIdBackPreview"
+                                 src="@(!string.IsNullOrEmpty(Model.IdentityInfo?.PhotoAfterCitizenshipCard)
+                                                                                                                                                ? Model.IdentityInfo.PhotoAfterCitizenshipCard
+                                                                        : "/assets/images/placeholder.jpg")"
+                                 class="img-fluid"
+                                 style="max-height: 180px;"
+                                 alt="Back Side" />
+                            <input type="file" id="fileBackSide" name="PhotoAfterCitizenshipCard" class="d-none" accept="image/*" />
+                            <label for="fileBackSide" class="position-absolute"
+                                   style="bottom: 10px; right: 10px; cursor: pointer;">
+                                <i class="mdi mdi-pencil-circle-outline bg-white rounded-circle p-2 shadow-sm"
+                                   style="font-size: 20px;"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="document">
+            <div class="card border p-3 mb-4">
+                <h5 class="text-muted">@Localizer["Document"]</h5>
+                <div class="text-right mb-2">
+                    <button id="btn-upload-document" class="btn btn-outline-primary" type="button">
+                        <i class="mdi mdi-upload"></i> @Localizer["Upload"]
+                    </button>
+                    <input type="file" id="fileDocument" class="d-none" data-employee="@Model.EmployeeNo"
+                        accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.jpg,.jpeg,.png,.gif,.webp" />
+                    <div id="uploadProgressWrapper" class="mt-2 d-none">
+                        <div class="progress">
+                            <div id="uploadProgressBar" class="progress-bar progress-bar-striped progress-bar-animated"
+                                role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                aria-valuemax="100">
+                                0%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @if (Model.Documents != null && Model.Documents.Any())
+                {
+                    <div class="row" id="document-list">
+                        @foreach (var doc in Model.Documents)
+                        {
+                            <div class="col-md-4 mb-3">
+                                <div class="border rounded p-2 h-100 position-relative">
+                                    <p class="mb-1">
+                                        <i class="mdi mdi-file-document-outline"></i>
+                                        <strong>@doc.NameFile</strong>
+                                    </p>
+                                    <p class="text-muted small mb-1">
+                                        @doc.SizeFile - @doc.TypeFile<br />
+                                        @{
+                                            var createdByImage = (doc.CreatedBy?.ToLowerInvariant().Replace(" ", "-").Replace(".",
+                                            "-") ?? "no-avatar") + ".png";
+                                        }
+                                        <img src="/images/users/@createdByImage"
+                                            onerror="this.src='/assets/images/users/no-avatar.png'" class="rounded-circle mr-1"
+                                            width="24" height="24" />
+                                        <span class="text-muted">@doc.CreatedBy</span> ·
+                                        <span>@doc.CreatedOn.ToString(dateFormat)</span>
+                                    </p>
+                                    <button class="btn btn-sm btn-outline-info btn-preview-document"
+                                        data-fileid="@doc.GoogleDriveFileId"
+                                        data-ext="@(doc.TypeFile != null ? doc.TypeFile.ToLowerInvariant() : string.Empty)">
+                                        <i class="mdi mdi-eye"></i>
+                                    </button>
+                                    <a class="btn btn-sm btn-outline-primary" href="@doc.GoogleDriveFileUrl" target="_blank"
+                                        download>
+                                        <i class="mdi mdi-download"></i>
+                                    </a>
+                                    <button class="btn btn-sm btn-outline-danger btn-delete-document" data-id="@doc.Id">
+                                        <i class="fe-trash-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted font-italic">@Localizer["NoDocumentUploadedYet"]</p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="previewModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="previewModalLabel">@Localizer["PreviewDocument"]</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0 position-relative">
+                    <div id="previewLoading"
+                        style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 10; text-align: center;">
+                        <div style="position: relative; top: 50%; transform: translateY(-50%);">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="sr-only">@Localizer["Loading"]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <iframe id="previewFrame" frameborder="0" class="d-none"></iframe>
+                    <div id="pdfCanvasContainer" class="w-100" style="overflow-y:auto; max-height:600px;"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Overlay khi đang upload -->
+    <div id="uploadOverlay"
+         style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.8); z-index: 2000; text-align: center;">
+
+        <div style="position: relative; top: 50%; transform: translateY(-50%); max-width: 300px; margin: auto;">
+            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                <span class="sr-only">Uploading...</span>
+            </div>
+        </div>
+    </div>
+</form>

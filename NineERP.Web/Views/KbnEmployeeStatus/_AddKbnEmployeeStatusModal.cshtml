@@ -1,0 +1,46 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<!-- Modal Add New Kbn Employee Status -->
+<div class="modal fade" id="modaladdkbnemployeestatus" tabindex="-1" role="dialog" aria-labelledby="modaladdkbnemployeestatusLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<form id="form-add-kbn-employee-status">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modaladdkbnemployeestatusLabel"></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="@Localizer["Close"]">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" id="kbnemployeestatusid" name="Id" />
+					<div class="form-group">
+						<label>@Localizer["EmployeeStatus"] <span class="text-danger">*</span></label>
+						<select class="form-control" name="status" id="ddlStatusId">
+						</select>
+					</div>
+					<div class="form-group">
+						<label>@Localizer["NameVi"] <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="kbnemployeestatusNameVi" name="NameVi" placeholder="@Localizer["EnterNameVi"]" required />
+					</div>
+					<div class="form-group">
+						<label>@Localizer["NameEn"] <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="kbnemployeestatusNameEn" name="NameEn" placeholder="@Localizer["EnterNameEn"]" required />
+					</div>
+					<div class="form-group">
+						<label>@Localizer["NameJp"] <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="kbnemployeestatusNameJp" name="NameJp" placeholder="@Localizer["EnterNameJp"]" required />
+					</div>
+					<div class="form-group">
+						<label>@Localizer["Description"]</label>
+						<textarea class="form-control" id="kbnemployeestatusdescription" name="Description" rows="2" placeholder="@Localizer["Description"]"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-light" data-dismiss="modal">@Localizer["Cancel"]</button>
+					<button type="submit" class="btn btn-success" id="btnSaveAndContinue">@Localizer["SaveAndContinue"]</button>
+					<button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

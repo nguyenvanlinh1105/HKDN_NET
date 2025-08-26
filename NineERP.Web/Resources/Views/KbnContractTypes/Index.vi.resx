@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="ContractTypeManagement" xml:space="preserve">
+    <value>Quản lý loại hợp đồng</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="Search name..." xml:space="preserve">
+    <value>Tìm kiếm theo tên</value>
+  </data>
+  <data name="ContractType, Description..." xml:space="preserve">
+    <value>Tên loại hợp đồng, mô tả...</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Thêm mới</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>STT</value>
+  </data>
+  <data name="NameVi" xml:space="preserve">
+    <value>Tên tiếng việt</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>Tên tiếng anh</value>
+  </data>
+  <data name="NameJp" xml:space="preserve">
+    <value>Tên tiếng nhật</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Hành động</value>
+  </data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve">
+    <value>Xóa loại hợp đồng?</value>
+  </data>
+  <data name="ConfirmDeleteText" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa loại hợp đồng này?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Đồng ý</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="AddNewKbnContractType" xml:space="preserve">
+    <value>Thêm loại hợp đồng mới</value>
+  </data>
+  <data name="EditKbnContractType" xml:space="preserve">
+    <value>Chỉnh sửa loại hợp đồng</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>Không có dữ liệu.</value>
+  </data>
+</root>

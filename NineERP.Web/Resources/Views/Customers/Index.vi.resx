@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="CustomerManagement" xml:space="preserve">
+    <value>Quản lý khách hàng</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="Search name..." xml:space="preserve">
+    <value>Tìm theo tên khách hàng... </value>
+  </data>
+  <data name="CompanyName,..." xml:space="preserve">
+    <value>Tên công ty,..</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Thêm mới</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>STT</value>
+  </data>
+  <data name="CustomerType" xml:space="preserve">
+    <value>Loại khách hàng</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Tên khách hàng</value>
+  </data>
+  <data name="Province" xml:space="preserve">
+    <value>Tỉnh/Thành Phố</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Quốc gia</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Hành động</value>
+  </data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve">
+    <value>Xóa khách hàng?</value>
+  </data>
+  <data name="ConfirmDeleteText" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa khách hàng này?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Đồng ý</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="AddNewCustomer" xml:space="preserve">
+    <value>Thêm khách hàng mới</value>
+  </data>
+  <data name="EditCustomer" xml:space="preserve">
+    <value>Chỉnh sửa khách hàng</value>
+  </data>
+    <data name="Company" xml:space="preserve">
+    <value>Công ty</value>
+  </data>
+  <data name="Personal" xml:space="preserve">
+    <value>Cá nhân</value>
+  </data>
+  <data name="NEW" xml:space="preserve">
+    <value>Khách hàng mới</value>
+  </data>
+  <data name="CONNECTION" xml:space="preserve">
+    <value>Khách hàng đã kết nối</value>
+  </data>
+  <data name="UNCONNECTION" xml:space="preserve">
+    <value>Dừng hợp tác</value>
+  </data>
+  <data name="SelectCountry" xml:space="preserve">
+    <value>Chọn Quốc Gia</value>
+  </data>
+  <data name="SelectProvince" xml:space="preserve">
+    <value>Chọn Tỉnh/Thành Phố</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>Không có dữ liệu.</value>
+  </data>
+</root>

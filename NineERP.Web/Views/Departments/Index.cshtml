@@ -1,0 +1,156 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Department Management"];
+    var breadcrumb = new List<(string Text, string Url)>
+    {
+        (Localizer["Dashboard"].Value, "/dashboard"),
+        (Localizer["DepartmentManagement"].Value, null!)
+    };
+}
+@section Styles{
+    <link rel="stylesheet" href="~/assets/libs/treant/Treant.css" />
+    <link rel="stylesheet" href="~/assets/libs/select2/select2.min.css" />
+    <link rel="stylesheet" href="~/admin-app/controllers/department/index.css" />
+}
+@section Scripts {
+    <script src="~/assets/libs/mustache/mustache.min.js" asp-append-version="true"></script>
+    <script src="~/assets/libs/raphael/raphael.min.js" asp-append-version="true"></script>
+    <script src="~/assets/libs/treant/Treant.js" asp-append-version="true"></script>
+    <script src="~/assets/libs/select2/select2.min.js" asp-append-version="true"></script>
+    <script src="~/admin-app/controllers/department/index.js" asp-append-version="true"></script>
+    <script>
+        var departmentObj = new DepartmentController();
+        departmentObj.initialize();
+
+        window.localization = {
+            ConfirmDeleteTitle: '@Localizer["ConfirmDeleteTitle"]',
+            ConfirmDeleteText: '@Localizer["ConfirmDeleteText"]',
+            ConfirmDeleteMultipleText: '@Localizer["ConfirmDeleteMultipleText"]',
+            Departments: '@Localizer["Departments"]',
+            Yes: '@Localizer["Yes"]',
+            No: '@Localizer["No"]',
+            OperationFailed: '@Localizer["OperationFailed"]',
+            PleaseSelectAtLeastOne: '@Localizer["Please select at least one department"]',
+            DeleteDepartmentsTitle: '@Localizer["Delete departments?"]',
+            DeleteDepartmentTitle: '@Localizer["Delete department?"]',
+            DeleteDepartmentsText: '@Localizer["You are about to delete"]',
+            DeleteDepartmentText: '@Localizer["Are you sure you want to delete this department?"]',
+            Save: '@Localizer["Save"]',
+            Cancel: '@Localizer["Cancel"]',
+            LoadingTree: '@Localizer["Loading Tree..."]',
+            RootDepartment: '@Localizer["Root Department"]',
+            NoRecordsFound: '@Localizer["No records found."]',
+            AddSuccess: '@Localizer["AddSuccess"]',
+            UpdateSuccess: '@Localizer["UpdateSuccess"]',
+            DeleteSuccess: '@Localizer["DeleteSuccess"]'
+        };
+    </script>
+}
+
+
+<!-- Breadcrumb -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex justify-content-between align-items-center">
+            <div>
+                <h4 class="page-title">@ViewData["Title"]</h4>
+            </div>
+            <div>
+                @await Html.PartialAsync("_BreadcrumbPartial", breadcrumb)
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filter -->
+<div class="row mb-2">
+    <div class="col-lg-6">
+        <form class="form-inline" id="form-filter">
+            <div class="form-group mr-2">
+                <input type="text" id="txtKeyword" class="form-control" placeholder="@Localizer["Search name..."]" />
+            </div>
+            <button type="button" id="btn-search" class="btn btn-primary mr-2">
+                <i class="mdi mdi-magnify"></i> @Localizer["Search"]
+            </button>
+            <!-- Button toggle -->
+            <div class="btn-group" role="group">
+                <button type="button" id="btn-view-tree" class="btn btn-outline-secondary">
+                    <i class="mdi mdi-sitemap"></i>
+                </button>
+                <button type="button" id="btn-view-table" class="btn btn-outline-primary d-none">
+                    <i class="mdi mdi-table"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-6 text-lg-right mt-3 mt-lg-0">
+        <button type="button" id="btn-delete-multiple" class="btn btn-outline-danger mr-2">
+            <i class="fe-trash-2"></i>
+        </button>
+
+        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modalAddDepartment">
+            <i class="mdi mdi-plus-circle"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Table View -->
+<div class="card" id="department-list-view">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th style="width: 40px;"><input type="checkbox" id="check-all" /></th>
+                        <th>@Localizer["Number"]</th>
+                        <th>@Localizer["NameVi"] </th>
+                        <th>@Localizer["NameEN"] </th>
+                        <th>@Localizer["Description"]</th>
+                        <th class="text-center">@Localizer["Action"]</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl-content"></tbody>
+            </table>
+        </div>
+        <partial name="_PaginationPartial" />
+    </div>
+</div>
+
+<!-- Tree View Container -->
+<div class="card d-none" id="department-tree-view">
+    <div class="card-body">
+        <!-- Loading Spinner -->
+        <div id="tree-loading" class="text-center py-5 d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="mt-2">@Localizer["Loading Tree..."]</div>
+        </div>
+
+        <div id="org-chart-container"></div>
+    </div>
+</div>
+
+<!-- Template -->
+<script id="table-template" type="x-tmpl-mustache">
+    <tr>
+        <td><input type="checkbox" class="check-row" value="{{Id}}" /></td>
+        <td>{{DisplayOrder}}</td>
+        <td>{{NameVi}}</td>
+        <td>{{NameEn}}</td>
+        <td>{{Description}}</td>
+        <td class="text-center">
+            <a href="#" class="btn btn-xs btn-info btn-edit mr-1" data-id="{{Id}}">
+                <i class="fe-edit"></i>
+            </a>
+            <a href="#" class="btn btn-xs btn-danger btn-delete" data-id="{{Id}}">
+                <i class="fe-trash-2"></i>
+            </a>
+        </td>
+    </tr>
+</script>
+
+<!-- Modal -->
+@await Html.PartialAsync("_AddDepartmentModal")
+@await Html.PartialAsync("_EditDepartmentModal")

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Password Default" xml:space="preserve"><value>Default Password</value></data>
+<data name="Fiscal Year Start Day (dd/mm)" xml:space="preserve"><value>Fiscal Year Start Day (dd/mm)</value></data>
+<data name="Annual Leave Days" xml:space="preserve"><value>Annual Leave Days</value></data>
+<data name="Approve Leave By" xml:space="preserve"><value>Approve Leave By</value></data>
+<data name="Cancel Leave By" xml:space="preserve"><value>Cancel Leave By</value></data>
+
+</root>

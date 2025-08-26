@@ -1,0 +1,13 @@
+D:\HKDN\NineERP_2025\NineERP.Domain\bin\Debug\net9.0\NineERP.Domain.deps.json
+D:\HKDN\NineERP_2025\NineERP.Domain\bin\Debug\net9.0\NineERP.Domain.dll
+D:\HKDN\NineERP_2025\NineERP.Domain\bin\Debug\net9.0\NineERP.Domain.pdb
+D:\HKDN\NineERP_2025\NineERP.Domain\obj\Debug\net9.0\NineERP.Domain.csproj.AssemblyReference.cache
+D:\HKDN\NineERP_2025\NineERP.Domain\obj\Debug\net9.0\NineERP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\HKDN\NineERP_2025\NineERP.Domain\obj\Debug\net9.0\NineERP.Domain.AssemblyInfoInputs.cache
+D:\HKDN\NineERP_2025\NineERP.Domain\obj\Debug\net9.0\NineERP.Domain.AssemblyInfo.cs
+D:\HKDN\NineERP_2025\NineERP.Domain\obj\Debug\net9.0\NineERP.Domain.csproj.CoreCompileInputs.cache
+D:\HKDN\NineERP_2025\NineERP.Domain\obj\Debug\net9.0\NineERP.Domain.sourcelink.json
+D:\HKDN\NineERP_2025\NineERP.Domain\obj\Debug\net9.0\NineERP.Domain.dll
+D:\HKDN\NineERP_2025\NineERP.Domain\obj\Debug\net9.0\refint\NineERP.Domain.dll
+D:\HKDN\NineERP_2025\NineERP.Domain\obj\Debug\net9.0\NineERP.Domain.pdb
+D:\HKDN\NineERP_2025\NineERP.Domain\obj\Debug\net9.0\ref\NineERP.Domain.dll

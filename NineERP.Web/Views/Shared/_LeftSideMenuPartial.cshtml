@@ -1,0 +1,86 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="left-side-menu">
+    <div class="slimscroll-menu">
+        <div id="sidebar-menu">
+            <ul class="metismenu" id="side-menu">
+
+                <li class="menu-title">@Localizer["Navigation"]</li>
+
+                <li>
+                    <a href="/dashboard" class="waves-effect">
+                        <i class="remixicon-dashboard-line"></i>
+                        <span> @Localizer["Dashboard"] </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect">
+                        <i class="remixicon-file-text-line"></i>
+                        <span> @Localizer["EmployeeManagement"] </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="/employees">@Localizer["Employees"]</a></li>
+                        <li><a href="/departments">@Localizer["Departments"]</a></li>
+                        <li><a href="/positions">@Localizer["Positions"]</a></li>
+                        <li><a href="/mstprogramminglanguages">@Localizer["MstProgrammingLanguages"]</a></li>
+                        <li><a href="/mstteams">@Localizer["MstTeams"]</a></li>
+                        <li><a href="/attendances">@Localizer["Attendances"]</a></li>
+                        <li><a href="/kbncontracttypes">@Localizer["KbnContractTypes"]</a></li>
+                        <li><a href="/kbnemployeestatus">@Localizer["KbnEmployeeStatus"]</a></li>
+                        <li><a href="/kbnleavetypes">@Localizer["KbnLeaveTypes"]</a></li>
+                        <li><a href="/kbnholidaytypes">@Localizer["KbnHolidayTypes"]</a></li>
+                        <li><a href="/kbndevicetypes">@Localizer["KbnDeviceTypes"]</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect">
+                        <i class="remixicon-file-text-line"></i>
+                        <span> @Localizer["HRManagement"] </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="/mstshifts">@Localizer["MstShifts"]</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect">
+                        <i class="remixicon-file-text-line"></i>
+                        <span> @Localizer["CustomerManagement"] </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="/customers">@Localizer["Customers"]</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect">
+                        <i class="remixicon-stack-line"></i>
+                        <span> @Localizer["Management"] </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="/users">@Localizer["Users"]</a></li>
+                        <li><a href="/roles">@Localizer["Roles"]</a></li>
+                        <li><a href="/auditlogs">@Localizer["AuditLogs"]</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect">
+                        <i class="remixicon-settings-3-line"></i>
+                        <span> @Localizer["Settings"] </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="/generalsettings">@Localizer["GeneralSettings"]</a></li>
+                        <li><a href="/emailsettings">@Localizer["EmailSettings"]</a></li>
+                        <li><a href="/integrationsettings">@Localizer["IntegrationSettings"]</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

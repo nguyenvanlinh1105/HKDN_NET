@@ -1,0 +1,53 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<!-- Modal Add New Department -->
+<div class="modal fade" id="modalAddDepartment" tabindex="-1" role="dialog" aria-labelledby="modalAddDepartmentLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form id="form-add-department">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAddDepartmentLabel">@Localizer["Add New Department"]</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="@Localizer["Close"]">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>@Localizer["Name"] (VI) <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="NameVi" placeholder="@Localizer["Enter Name"]" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>@Localizer["Name"] (EN)</label>
+                            <input type="text" class="form-control" name="NameEn" placeholder="@Localizer["Enter Name"]" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>@Localizer["Name"] (JA)</label>
+                            <input type="text" class="form-control" name="NameJa" placeholder="@Localizer["Enter Name"]" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>@Localizer["Parent Department"]</label>
+                            <select class="form-control" name="ParentId" id="ddlParentId">
+                                <option value="">@Localizer["Root Department"]</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>@Localizer["Description"]</label>
+                        <textarea class="form-control" name="Description" rows="2" placeholder="@Localizer["Description"]"></textarea>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">@Localizer["Cancel"]</button>
+                    <button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

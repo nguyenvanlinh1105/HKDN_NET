@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="AccessKey" xml:space="preserve"><value>Access Key</value></data>
+<data name="SecretKey" xml:space="preserve"><value>Secret Key</value></data>
+<data name="Region" xml:space="preserve"><value>Khu vực (Region)</value></data>
+<data name="BucketName" xml:space="preserve"><value>Tên Bucket</value></data>
+<data name="ParentFolderId" xml:space="preserve"><value>Thư mục con (tuỳ chọn)</value></data>
+<data name="IsActive" xml:space="preserve"><value>Đang sử dụng</value></data>
+</root>

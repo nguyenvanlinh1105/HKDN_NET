@@ -1,0 +1,128 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<TypeScriptDisableWarnings>true</TypeScriptDisableWarnings>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+	<ItemGroup>
+	  <Compile Remove="Controllers\Mobile\**" />
+	  <Compile Remove="Middleware\**" />
+	  <Compile Remove="wwwroot\assets\landing-page\**" />
+	  <Compile Remove="wwwroot\images\**" />
+	  <Compile Remove="wwwroot\landing-page\**" />
+	  <Compile Remove="wwwroot\lib\**" />
+	  <Compile Remove="wwwroot\uploaded\**" />
+	  <Content Remove="Controllers\Mobile\**" />
+	  <Content Remove="Middleware\**" />
+	  <Content Remove="wwwroot\assets\landing-page\**" />
+	  <Content Remove="wwwroot\images\**" />
+	  <Content Remove="wwwroot\landing-page\**" />
+	  <Content Remove="wwwroot\lib\**" />
+	  <Content Remove="wwwroot\uploaded\**" />
+	  <EmbeddedResource Remove="Controllers\Mobile\**" />
+	  <EmbeddedResource Remove="Middleware\**" />
+	  <EmbeddedResource Remove="wwwroot\assets\landing-page\**" />
+	  <EmbeddedResource Remove="wwwroot\images\**" />
+	  <EmbeddedResource Remove="wwwroot\landing-page\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\**" />
+	  <EmbeddedResource Remove="wwwroot\uploaded\**" />
+	  <None Remove="Controllers\Mobile\**" />
+	  <None Remove="Middleware\**" />
+	  <None Remove="wwwroot\assets\landing-page\**" />
+	  <None Remove="wwwroot\images\**" />
+	  <None Remove="wwwroot\landing-page\**" />
+	  <None Remove="wwwroot\lib\**" />
+	  <None Remove="wwwroot\uploaded\**" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\cs\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\de\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\es\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\fr\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\it\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\ja\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\ko\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\Microsoft.Build.Locator.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe.config" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\Microsoft.IO.Redist.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\Newtonsoft.Json.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\pl\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\pt-BR\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\ru\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\System.Buffers.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\System.Collections.Immutable.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\System.CommandLine.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\System.Memory.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\System.Numerics.Vectors.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\System.Runtime.CompilerServices.Unsafe.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\System.Threading.Tasks.Extensions.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\tr\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\zh-Hans\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-net472\zh-Hant\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\cs\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\de\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\es\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\fr\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\it\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\ja\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\ko\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\Microsoft.Build.Locator.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.deps.json" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\Newtonsoft.Json.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\pl\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\pt-BR\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\ru\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\System.Collections.Immutable.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\System.CommandLine.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\tr\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\zh-Hans\System.CommandLine.resources.dll" />
+	  <Content Remove="C:\Users\duong\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.13.0\contentFiles\any\any\BuildHost-netcore\zh-Hant\System.CommandLine.resources.dll" />
+	  <Content Remove="wwwroot\admin-app\controllers\examResult\" />
+	  <Content Remove="wwwroot\admin-app\controllers\resultPeriod\" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="11.11.0" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
+		<PackageReference Include="Hangfire.AspNetCore" Version="1.8.18" />
+		<PackageReference Include="Hangfire.SqlServer" Version="1.8.18" />
+		<PackageReference Include="MediatR" Version="12.4.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.13" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Features" Version="4.13.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.13.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Graph" Version="5.72.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
+		<PackageReference Include="reCAPTCHA.AspNetCore" Version="3.0.10" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.3.0" />
+		<PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+		<PackageReference Include="Serilog.Formatting.Compact" Version="2.0.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="8.0.0" />
+		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
+		<PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="8.0.0" />
+		<PackageReference Include="UAParser" Version="3.1.47" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\NineERP.Application\NineERP.Application.csproj" />
+		<ProjectReference Include="..\NineERP.Infrastructure\NineERP.Infrastructure.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Logs\" />
+		<Folder Include="Properties\PublishProfiles\" />
+		<Folder Include="Resources\Models\" />
+	</ItemGroup>
+
+</Project>

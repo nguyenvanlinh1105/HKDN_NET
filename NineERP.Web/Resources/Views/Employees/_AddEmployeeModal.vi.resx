@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<root>
+  <data name="AddNewEmployee" xml:space="preserve">
+    <value>Thêm nhân viên mới</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="DefaultPasswordNote" xml:space="preserve">
+    <value>Tài khoản nhân viên sẽ được tạo với mật khẩu mặc định.</value>
+  </data>
+  <data name="BasicInformation" xml:space="preserve">
+    <value>Thông tin cơ bản</value>
+  </data>
+  <data name="JobInformation" xml:space="preserve">
+    <value>Thông tin công việc</value>
+  </data>
+  <data name="ContractInformation" xml:space="preserve">
+    <value>Thông tin hợp đồng</value>
+  </data>
+  <data name="EmployeeNo" xml:space="preserve">
+    <value>Mã nhân viên</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Họ và tên</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="Birthday" xml:space="preserve">
+    <value>Ngày sinh</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Giới tính</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Nam</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Nữ</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="PlaceBirth" xml:space="preserve">
+    <value>Nơi sinh</value>
+  </data>
+  <data name="Department" xml:space="preserve">
+    <value>Phòng ban</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Chức vụ</value>
+  </data>
+  <data name="EmployeeStatus" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="WorkingFrom" xml:space="preserve">
+    <value>Ngày bắt đầu</value>
+  </data>
+  <data name="ContractNumber" xml:space="preserve">
+    <value>Mã hợp đồng</value>
+  </data>
+  <data name="ContractType" xml:space="preserve">
+    <value>Loại hợp đồng</value>
+  </data>
+  <data name="ContractFrom" xml:space="preserve">
+    <value>Từ ngày</value>
+  </data>
+  <data name="ContractTo" xml:space="preserve">
+    <value>Đến ngày</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="PhoneNoTitle" xml:space="preserve">
+    <value>Số điện thoại hợp lệ từ 9 đến 15 ký tự, chỉ chứa số và dấu +</value>
+  </data>
+  <data name="EmailTitle" xml:space="preserve">
+    <value>Địa chỉ email hợp lệ, tối đa 100 ký tự</value>
+  </data>
+  <data name="SelectOption" xml:space="preserve">
+    <value>Chọn</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+</root>

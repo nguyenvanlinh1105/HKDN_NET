@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="SMTP_Host"><value>SMTP Host</value></data>
+<data name="SMTP_Port"><value>Port</value></data>
+<data name="SMTP_User"><value>SMTP Username</value></data>
+<data name="SMTP_Password"><value>SMTP Password</value></data>
+<data name="EnableSSL"><value>Enable SSL</value></data>
+<data name="SenderEmail"><value>Sender Email</value></data>
+<data name="SenderName"><value>Sender Name</value></data>
+<data name="SMTP_Required"><value>Please fill in all required SMTP information</value></data>
+</root>

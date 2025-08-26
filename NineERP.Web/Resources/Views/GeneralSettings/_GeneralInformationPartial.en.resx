@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Tax Code" xml:space="preserve"><value>Tax Code</value></data>
+<data name="Short Name" xml:space="preserve"><value>Short Name</value></data>
+<data name="Company Name" xml:space="preserve"><value>Company Name</value></data>
+<data name="Phone Number" xml:space="preserve"><value>Phone Number</value></data>
+<data name="Email" xml:space="preserve"><value>Email</value></data>
+<data name="Address" xml:space="preserve"><value>Address</value></data>
+<data name="Bank Name" xml:space="preserve"><value>Bank Name</value></data>
+<data name="Bank Account Number" xml:space="preserve"><value>Bank Account Number</value></data>
+<data name="Bank Account Name" xml:space="preserve"><value>Account Holder</value></data>
+<data name="Logo Company" xml:space="preserve"><value>Company Logo</value></data>
+
+</root>

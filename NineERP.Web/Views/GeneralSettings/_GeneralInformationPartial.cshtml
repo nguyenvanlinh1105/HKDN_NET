@@ -1,0 +1,40 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <label for="TaxCode">@Localizer["Tax Code"]</label>
+        <input type="text" class="form-control" id="TaxCode" name="TaxCode">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="ShortName">@Localizer["Short Name"] </label>
+        <input type="text" class="form-control" id="ShortName" name="ShortName">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="CompanyName">@Localizer["Company Name"]</label>
+        <input type="text" class="form-control" id="CompanyName" name="CompanyName">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="PhoneNumber">@Localizer["Phone Number"]</label>
+        <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="Email">@Localizer["Email"]</label>
+        <input type="email" class="form-control" id="Email" name="Email">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="Address">@Localizer["Address"]</label>
+        <input type="text" class="form-control" id="Address" name="Address">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="BankName">@Localizer["Bank Name"]</label>
+        <input type="text" class="form-control" id="BankName" name="BankName">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="BankAccountNumber">@Localizer["Bank Account Number"]</label>
+        <input type="text" class="form-control" id="BankAccountNumber" name="BankAccountNumber">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="AccountHolder">@Localizer["Bank Account Name"]</label>
+        <input type="text" class="form-control" id="AccountHolder" name="AccountHolder">
+    </div>
+</div>

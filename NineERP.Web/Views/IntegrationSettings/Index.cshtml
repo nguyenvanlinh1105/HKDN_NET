@@ -1,0 +1,96 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Integration Settings"];
+    var breadcrumb = new List<(string Text, string Url)>
+    {
+        (Localizer["Dashboard"].Value, "/dashboard"),
+        (Localizer["System Management"].Value, null!)
+    };
+}
+
+@section Scripts {
+    <script src="~/admin-app/controllers/integrationsettings/index.js" asp-append-version="true"></script>
+    <script>
+        window.localization = {
+            Save: '@Localizer["Save"]',
+            RequiredFields: '@Localizer["RequiredFields"]',
+            SaveSuccess: '@Localizer["SavedSuccessfully"]',
+            SaveFailed: '@Localizer["SaveFailed"]',
+            SaveError: '@Localizer["SaveError"]',
+            LoadError: '@Localizer["LoadError"]',
+            InvalidJson: '@Localizer["InvalidJson"]',
+            InvalidBucketName: '@Localizer["InvalidBucketName"]',
+            InvalidRegion: '@Localizer["InvalidRegion"]',
+            SelectFileFirst: '@Localizer["SelectFileFirst"]',
+            UploadSuccess: '@Localizer["UploadSuccess"]',
+            UploadFailed: '@Localizer["UploadFailed"]',
+            UploadError: '@Localizer["UploadError"]',
+            ViewFile: '@Localizer["ViewFile"]'
+        };
+
+        const integrationSettingController = new IntegrationSettingsController();
+        integrationSettingController.initialize();
+    </script>
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex justify-content-between align-items-center">
+            <h4 class="page-title">@ViewData["Title"]</h4>
+            <div>@await Html.PartialAsync("_BreadcrumbPartial", breadcrumb)</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <ul class="nav nav-pills navtab-bg">
+                <li class="nav-item">
+                    <a href="#drive-tab" data-toggle="tab" aria-selected="true" class="nav-link active ml-0">
+                        Google Drive
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#s3-tab" data-toggle="tab" aria-selected="false" class="nav-link">
+                        Amazon S3
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#recaptcha-tab" data-toggle="tab" aria-selected="false" class="nav-link">
+                        Google reCAPTCHA
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#calendar-tab" data-toggle="tab" aria-selected="false" class="nav-link">
+                        Google Calendar
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="drive-tab">
+                    @await Html.PartialAsync("_GoogleDriveSettingsPartial")
+                </div>
+                <div class="tab-pane fade" id="s3-tab">
+                    @await Html.PartialAsync("_S3SettingsPartial")
+                </div>
+                <div class="tab-pane fade" id="recaptcha-tab">
+                    @await Html.PartialAsync("_ReCaptchaSettingsPartial")
+                </div>
+                <div class="tab-pane fade" id="calendar-tab">
+                    @await Html.PartialAsync("_GoogleCalendarSettingsPartial")
+                </div>
+            </div>
+
+            <div class="text-right mt-3">
+                <button id="btn-save-integration-settings" class="btn btn-success waves-effect waves-light">
+                    <span class="spinner-border spinner-border-sm d-none" id="spinner-integration" role="status" aria-hidden="true"></span>
+                    <i class="mdi mdi-content-save"></i> @Localizer["Save"]
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

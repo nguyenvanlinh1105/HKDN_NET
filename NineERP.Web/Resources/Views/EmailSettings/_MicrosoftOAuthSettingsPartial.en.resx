@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Microsoft_ClientId"><value>Client ID</value></data>
+<data name="Microsoft_ClientSecret"><value>Client Secret</value></data>
+<data name="Microsoft_TenantId"><value>Tenant ID</value></data>
+<data name="Microsoft_RefreshToken"><value>Refresh Token</value></data>
+<data name="SenderEmail"><value>Sender Email</value></data>
+<data name="SenderName"><value>Sender Name</value></data>
+<data name="Microsoft_Required"><value>Please fill in all required Microsoft OAuth information</value></data>
+</root>

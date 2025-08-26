@@ -1,0 +1,12 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label for="Calendar_ClientId">@Localizer["Client ID"]</label>
+        <input type="text" class="form-control" id="Calendar_ClientId">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="Calendar_ClientSecret">@Localizer["Client Secret"]</label>
+        <input type="text" class="form-control" id="Calendar_ClientSecret">
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="LeaveTypeManagement" xml:space="preserve">
+    <value>Quản lý loại nghỉ phép</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="Search name..." xml:space="preserve">
+    <value>Tìm kiếm theo tên</value>
+  </data>
+  <data name="KbnLeaveTypeName, Description..." xml:space="preserve">
+    <value>Tên trạng thái nhân viên, mô tả...</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Thêm mới</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>STT</value>
+  </data>
+  <data name="LeaveTypeFlag" xml:space="preserve">
+    <value>Loại nghỉ phép</value>
+  </data>
+  <data name="Acronym" xml:space="preserve">
+    <value>Từ viết tắt</value>
+  </data>
+  <data name="NameVi" xml:space="preserve">
+    <value>Tên tiếng việt</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>Tên tiếng anh</value>
+  </data>
+  <data name="NameJp" xml:space="preserve">
+    <value>Tên tiếng nhật</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Hành động</value>
+  </data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve">
+    <value>Xóa loại nghỉ phép?</value>
+  </data>
+  <data name="ConfirmDeleteText" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa loại nghỉ phép này?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Đồng ý</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="ANNUAL_LEAVE" xml:space="preserve">
+    <value>Nghỉ có lương</value>
+  </data>
+  <data name="UNPAID_LEAVE" xml:space="preserve">
+    <value>Nghỉ không lương</value>
+  </data>
+  <data name="GO_IN_OUT" xml:space="preserve">
+    <value>Ra ngoài</value>
+  </data>
+  <data name="AddNewKbnLeaveType" xml:space="preserve">
+    <value>Thêm loại ngày nghỉ phép mới</value>
+  </data>
+  <data name="EditKbnLeaveType" xml:space="preserve">
+    <value>Chỉnh sửa loại ngày nghỉ phép</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>Không có dữ liệu.</value>
+  </data>
+</root>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="MstShiftManagement" xml:space="preserve">
+    <value>Shift Management</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="MstShift, Description..." xml:space="preserve">
+    <value>Shift, Description...</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="MorningWork" xml:space="preserve">
+    <value>Morning Work</value>
+  </data>
+  <data name="AfternoonWork" xml:space="preserve">
+    <value>Afternoon Work</value>
+  </data>
+  <data name="TotalHour" xml:space="preserve">
+    <value>Total Hour</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve">
+    <value>Delete shift?</value>
+  </data>
+  <data name="ConfirmDeleteText" xml:space="preserve">
+    <value>Are you sure you want to delete this shift?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="AddNewMstShift" xml:space="preserve">
+    <value>Add New Shift</value>
+  </data>
+  <data name="EditMstShift" xml:space="preserve">
+    <value>Edit Shift</value>
+  </data>
+  <data name="NumberOfEmployee" xml:space="preserve">
+    <value>Number Of Employee </value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Set default</value>
+  </data>
+  <data name="ConfirmDefaultTitle" xml:space="preserve">
+    <value>Set as Default Shift?</value>
+  </data>
+  <data name="ConfirmDefaultText" xml:space="preserve">
+    <value>Are you sure you want to set this shift as the default?</value>
+  </data>
+  <data name="SelectTargetShift" xml:space="preserve">
+    <value>Select Target Shift</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Move</value>
+  </data>
+  <data name="MovedSuccessfully" xml:space="preserve">
+    <value>Employees moved successfully.</value>
+  </data>
+  <data name="EmployeeCode" xml:space="preserve">
+    <value>Employee Code</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>No records found.</value>
+  </data>
+</root>

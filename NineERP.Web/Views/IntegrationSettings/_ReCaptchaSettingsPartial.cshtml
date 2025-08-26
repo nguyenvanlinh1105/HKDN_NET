@@ -1,0 +1,12 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label for="Recaptcha_PublicKey">@Localizer["Public Key"]</label>
+        <input type="text" class="form-control" id="Recaptcha_PublicKey">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="Recaptcha_PrivateKey">@Localizer["Private Key"]</label>
+        <input type="text" class="form-control" id="Recaptcha_PrivateKey">
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="MstShiftManagement" xml:space="preserve">
+    <value>Quản lý ca làm việc</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="MstShift, Description..." xml:space="preserve">
+    <value>Ca làm việc, mô tả...</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Thêm mới</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>STT</value>
+  </data>
+  <data name="MorningWork" xml:space="preserve">
+    <value>Thời gian làm việc buổi sáng</value>
+  </data>
+  <data name="AfternoonWork" xml:space="preserve">
+    <value>Thời gian làm việc buổi chiều</value>
+  </data>
+  <data name="TotalHour" xml:space="preserve">
+    <value>Tổng thời gian làm việc</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Hành động</value>
+  </data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve">
+    <value>Xóa ca làm việc?</value>
+  </data>
+  <data name="ConfirmDeleteText" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa ca làm việc này?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Đồng ý</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="AddNewMstShift" xml:space="preserve">
+    <value>Thêm ca làm việc mới</value>
+  </data>
+  <data name="EditMstShift" xml:space="preserve">
+    <value>Chỉnh sửa ca làm việc</value>
+  </data>
+  <data name="NumberOfEmployee" xml:space="preserve">
+    <value>Số nhân viên</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Chọn mặc định</value>
+  </data>
+  <data name="ConfirmDefaultTitle" xml:space="preserve">
+    <value>	Đặt làm ca mặc định?</value>
+  </data>
+  <data name="ConfirmDefaultText" xml:space="preserve">
+    <value>Bạn có chắc muốn đặt ca này làm ca mặc định không?</value>
+  </data>
+  <data name="SelectTargetShift" xml:space="preserve">
+    <value>Chọn ca làm việc muốn chuyển</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Di chuyển</value>
+  </data>
+  <data name="MovedSuccessfully" xml:space="preserve">
+    <value>Chuyển ca làm việc thành công</value>
+  </data>
+  <data name="EmployeeCode" xml:space="preserve">
+    <value>Mã nhân viên</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Tên nhân viên</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>Không có dữ liệu.</value>
+  </data>
+</root>

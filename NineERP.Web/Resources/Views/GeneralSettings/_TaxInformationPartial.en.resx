@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Insurance Company (%)" xml:space="preserve"><value>Insurance Company (%)</value></data>
+<data name="Health Insurance Company (%)" xml:space="preserve"><value>Health Insurance Company (%)</value></data>
+<data name="Accident Insurance Company (%)" xml:space="preserve"><value>Accident Insurance Company (%)</value></data>
+<data name="Union Company (%)" xml:space="preserve"><value>Union Company (%)</value></data>
+<data name="Insurance Employee (%)" xml:space="preserve"><value>Insurance Employee (%)</value></data>
+<data name="Health Insurance Employee (%)" xml:space="preserve"><value>Health Insurance Employee (%)</value></data>
+<data name="Accident Insurance Employee (%)" xml:space="preserve"><value>Accident Insurance Employee (%)</value></data>
+<data name="Union Employee (%)" xml:space="preserve"><value>Union Employee (%)</value></data>
+<data name="Income Tax (%)" xml:space="preserve"><value>Income Tax (%)</value></data>
+
+</root>

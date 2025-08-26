@@ -1,0 +1,56 @@
+﻿@using NineERP.Application.Constants.Role
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<!-- Modal Add New User -->
+<div class="modal fade" id="modalAddUser" tabindex="-1" role="dialog" aria-labelledby="modalAddUserLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form id="form-add-user">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAddUserLabel">@Localizer["Add New User"]</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="@Localizer["Close"]">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        <i class="mdi mdi-information-outline"></i>
+                        @Localizer["DefaultPasswordNote"]
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>@Localizer["Email"] <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" name="Email" placeholder="@Localizer["Enter Email"]" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>@Localizer["Username"] <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="UserName" placeholder="@Localizer["Enter Username"]" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>@Localizer["Full Name"]</label>
+                            <input type="text" class="form-control" name="FullName" placeholder="@Localizer["Enter Full Name"]" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>@Localizer["Role"]</label>
+                            <select class="form-control" name="Role">
+                                <option value="">@Localizer["Choose Role"]</option>
+                                <option value="@RoleConstants.Admin">@RoleConstants.Admin</option>
+                                <option value="@RoleConstants.User">@RoleConstants.User</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">@Localizer["Cancel"]</button>
+                    <button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

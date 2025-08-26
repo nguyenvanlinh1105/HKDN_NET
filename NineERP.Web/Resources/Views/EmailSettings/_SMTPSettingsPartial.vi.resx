@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="SMTP_Host"><value>Máy chủ SMTP</value></data>
+<data name="SMTP_Port"><value>Cổng</value></data>
+<data name="SMTP_User"><value>Tên đăng nhập SMTP</value></data>
+<data name="SMTP_Password"><value>Mật khẩu SMTP</value></data>
+<data name="EnableSSL"><value>Bật SSL</value></data>
+<data name="SenderEmail"><value>Email người gửi</value></data>
+<data name="SenderName"><value>Tên người gửi</value></data>
+<data name="SMTP_Required"><value>Vui lòng nhập đầy đủ thông tin SMTP</value></data>
+</root>

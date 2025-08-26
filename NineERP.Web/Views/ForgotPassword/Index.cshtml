@@ -1,0 +1,91 @@
+﻿@model NineERP.Web.Models.ForgotPasswordViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["ForgotPassword"];
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>@Localizer["ForgotPassword"] - NineERP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Reset password page for NineERP system" name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico" />
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" />
+    <link href="~/assets/css/app.min.css" rel="stylesheet" />
+    <link href="~/assets/libs/jquery-toast/jquery.toast.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="account-pages mt-5 mb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-5">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <div class="text-center w-75 m-auto">
+                                <a href="/">
+                                    <img src="~/assets/images/logo-light.webp" alt="logo" height="35" />
+                                </a>
+                                <p class="text-muted mb-4 mt-3">@Localizer["EnterYourEmailToReset"]</p>
+                            </div>
+
+                            <form id="formForgotPassword" asp-action="Index" method="post" novalidate>
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-group mb-3">
+                                    <label>@Localizer["Email"]</label>
+                                    <input id="email" name="Email" class="form-control" placeholder="you@example.com" />
+                                    <small id="emailError" class="text-danger d-block"></small>
+                                </div>
+
+                                <div class="form-group mb-0 text-center">
+                                    <button class="btn btn-primary btn-block" type="submit" id="btnSubmit">
+                                        @Localizer["SendResetLink"]
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12 text-center">
+                            <p class="text-muted">
+                                @Localizer["BackTo"]
+                                <a href="/Login" class="text-muted font-weight-medium ml-1">
+                                    @Localizer["Login"]
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-alt text-center">
+        © @DateTime.Now.Year - NineERP
+    </footer>
+
+    <script src="~/assets/js/vendor.min.js"></script>
+    <script src="~/assets/js/app.min.js"></script>
+    <script src="~/assets/libs/jquery-toast/jquery.toast.min.js"></script>
+    <script src="~/admin-app/controllers/forgotPassword/index.js" asp-append-version="true"></script>
+    <script>
+        var forgotPasswordResources = {
+            emailRequired: '@Localizer["EmailRequired"]',
+            invalidEmail: '@Localizer["InvalidEmail"]',
+            sending: '@Localizer["Sending"]',
+            sendResetLink: '@Localizer["SendResetLink"]'
+        };
+        var forgotPassword = new forgotPasswordController();
+        forgotPassword.initialize();
+    </script>
+</body>
+</html>

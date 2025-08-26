@@ -1,0 +1,191 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="modal fade" id="modalAddEmployee" tabindex="-1" role="dialog" aria-labelledby="modalAddEmployeeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <form id="form-add-employee">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAddEmployeeLabel">@Localizer["AddNewEmployee"]</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="@Localizer["Close"]">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="alert alert-info">
+                        <i class="mdi mdi-information-outline"></i> @Localizer["DefaultPasswordNote"]
+                    </div>
+
+                    <!-- Basic Info -->
+                    <div class="card mb-3">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center toggle-card" data-target="#basicInfoCard" style="cursor: pointer;">
+                            <strong><i class="mdi mdi-account-outline mr-1"></i> @Localizer["BasicInformation"]</strong>
+                            <i class="mdi mdi-chevron-up"></i>
+                        </div>
+                        <div id="basicInfoCard" class="card-body">
+                            <div class="form-row">
+                               <div class="form-group col-md-6">
+                                    <label>@Localizer["EmployeeNo"]</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="employeePrefix">EMP</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="txtEmployeeNoNumber" maxlength="4" pattern="\d{4}" required />
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button" id="btn-edit-employee-no" title="@Localizer["Edit"]">
+                                                <i class="mdi mdi-pencil"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["FullName"] <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="FullName" required />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["EmailAddress"] <span class="text-danger">*</span></label>
+                                    <input type="email" name="Email"
+                                        class="form-control"
+                                        maxlength="100"
+                                        title="@Localizer["EmailTitle"]" required/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["PhoneNumber"]</label>
+                                    <input type="tel" name="PhoneNo" maxlength="15"
+                                        pattern="^[0-9+]{9,15}$"
+                                        class="form-control" 
+                                        title="@Localizer["PhoneNoTitle"]" />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["Birthday"]</label>
+                                    <input type="text" class="form-control flatpickr-date" name="Birthday" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["Gender"]</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="Gender" value="0" checked />
+                                        <label class="form-check-label">@Localizer["Male"]</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="Gender" value="1" />
+                                        <label class="form-check-label">@Localizer["Female"]</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="Gender" value="2" />
+                                        <label class="form-check-label">@Localizer["Other"]</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>@Localizer["Address"]</label>
+                                <textarea class="form-control" name="Address" rows="2"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>@Localizer["PlaceBirth"]</label>
+                                <textarea class="form-control" name="PlaceOfBirth" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Info -->
+                    <div class="card mb-3">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center toggle-card" data-target="#jobInfoCard" style="cursor: pointer;">
+                            <strong><i class="mdi mdi-briefcase-outline mr-1"></i> @Localizer["JobInformation"]</strong>
+                            <i class="mdi mdi-chevron-up"></i>
+                        </div>
+                        <div id="jobInfoCard" class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["Department"] <span class="text-danger">*</span></label>
+                                    <select class="form-control" name="DepartmentId" required>
+                                        <option value="">@Localizer["Select Option"]</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["Position"] <span class="text-danger">*</span></label>
+                                    <select class="form-control" name="PositionId" required>
+                                        <option value="">@Localizer["Select Option"]</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["EmployeeStatus"] <span class="text-danger">*</span></label>
+                                    <select class="form-control" name="EmployeeStatusId" required>
+                                        <option value="">@Localizer["SelectOption"]</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["WorkingFrom"]</label>
+                                    <input type="text" class="form-control flatpickr-date" name="WorkingDateFrom" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contract Info -->
+                    <div class="card mb-3" id="contractSectionWrapper">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center toggle-card" data-target="#contractInfoCard" style="cursor: pointer;">
+                            <strong><i class="mdi mdi-file-document-outline mr-1"></i> @Localizer["ContractInformation"]</strong>
+                            <i class="mdi mdi-chevron-up"></i>
+                        </div>
+                        <div id="contractInfoCard" class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["ContractNumber"]</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="contractPrefix">OFFICIAL</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="txtContractNoNumber" maxlength="4" pattern="\d{4}" required />
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button" id="btn-edit-contract-no" title="@Localizer["Edit"]">
+                                                <i class="mdi mdi-pencil"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["ContractType"]</label>
+                                    <select class="form-control" name="ContractTypeId" required>
+                                        <option value="">@Localizer["SelectOption"]</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["ContractFrom"]</label>
+                                    <input type="text" class="form-control flatpickr-date" name="ContractFrom" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>@Localizer["ContractTo"]</label>
+                                    <input type="text" class="form-control flatpickr-date" name="ContractTo" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">@Localizer["Cancel"]</button>
+                    <button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

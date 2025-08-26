@@ -1,0 +1,98 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Role Management"];
+    var breadcrumb = new List<(string Text, string Url)>
+    {
+        (Localizer["Dashboard"].Value, "/dashboard"),
+        (Localizer["Role Management"].Value, null!)
+    };
+}
+
+@section Scripts {
+    <script src="~/assets/libs/mustache/mustache.min.js"></script>
+    <script src="~/admin-app/controllers/role/index.js"></script>
+    <script>
+        var roleObj = new RoleController();
+        roleObj.initialize();
+
+        window.localization = {
+            ConfirmDeleteTitle: '@Localizer["ConfirmDeleteTitle"]',
+            ConfirmDeleteText: '@Localizer["ConfirmDeleteText"]',
+            Yes: '@Localizer["Yes"]',
+            No: '@Localizer["No"]'
+        };
+    </script>
+}
+
+<!-- Breadcrumb -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex justify-content-between align-items-center">
+            <h4 class="page-title">@ViewData["Title"]</h4>
+            @await Html.PartialAsync("_BreadcrumbPartial", breadcrumb)
+        </div>
+    </div>
+</div>
+<!-- Filter -->
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <div class="row">
+                <div class="col-lg-8">
+                    <form class="form-inline" id="form-filter">
+                        <div class="form-group mb-2 mr-2">
+                            <label class="sr-only" for="txtKeyword">Search</label>
+                            <input type="text" id="txtKeyword" class="form-control" placeholder="@Localizer["Role, Description..."]">
+                        </div>
+                        <button type="button" id="btn-search" class="btn btn-primary mb-2">
+                            <i class="mdi mdi-magnify mr-1"></i> @Localizer["Search"]
+                        </button>
+                    </form>
+                </div>
+                <div class="col-lg-4 text-lg-right mt-3 mt-lg-0">
+                    <button type="button" class="btn btn-danger waves-effect waves-light float-right mb-3" data-toggle="modal" data-target="#modalAddRole">
+                        <i class="mdi mdi-plus-circle mr-1"></i> @Localizer["Add New"]
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<div class="card">
+    <div class="card-body">
+        <div class="wrap-table">
+            <table class="table table-striped dt-responsive nowrap">
+                <thead>
+                    <tr>
+                        <th>@Localizer["Number"]</th>
+                        <th>@Localizer["Role Name"]</th>
+                        <th>@Localizer["Description"]</th>
+                        <th>@Localizer["Created Date"]</th>
+                        <th class="text-center">@Localizer["Action"]</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl-content"></tbody>
+            </table>
+        </div>
+        <partial name="_PaginationPartial" />
+    </div>
+</div>
+
+<script id="table-template" type="x-tmpl-mustache">
+    <tr>
+        <td>{{DisplayOrder}}</td>
+        <td>{{Name}}</td>
+        <td>{{Description}}</td>
+        <td>{{CreatedOn}}</td>
+        <td class="text-center">
+            <a href="#" class="btn btn-xs btn-info btn-assign-permission" data-id="{{Id}}" data-name="{{Name}}"><i class="mdi mdi-shield-account"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-danger btn-delete"><i class="fe-trash-2"></i></a>
+        </td>
+    </tr>
+</script>
+
+@await Html.PartialAsync("_AddRoleModal")
+@await Html.PartialAsync("_AssignPermission")

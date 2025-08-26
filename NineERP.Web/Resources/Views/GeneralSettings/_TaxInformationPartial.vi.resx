@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Insurance Company (%)" xml:space="preserve"><value>Bảo hiểm công ty (%)</value></data>
+<data name="Health Insurance Company (%)" xml:space="preserve"><value>Bảo hiểm y tế công ty (%)</value></data>
+<data name="Accident Insurance Company (%)" xml:space="preserve"><value>Bảo hiểm tai nạn công ty (%)</value></data>
+<data name="Union Company (%)" xml:space="preserve"><value>Công đoàn công ty (%)</value></data>
+<data name="Insurance Employee (%)" xml:space="preserve"><value>Bảo hiểm nhân viên (%)</value></data>
+<data name="Health Insurance Employee (%)" xml:space="preserve"><value>Bảo hiểm y tế nhân viên (%)</value></data>
+<data name="Accident Insurance Employee (%)" xml:space="preserve"><value>Bảo hiểm tai nạn nhân viên (%)</value></data>
+<data name="Union Employee (%)" xml:space="preserve"><value>Công đoàn nhân viên (%)</value></data>
+<data name="Income Tax (%)" xml:space="preserve"><value>Thuế thu nhập (%)</value></data>
+
+</root>

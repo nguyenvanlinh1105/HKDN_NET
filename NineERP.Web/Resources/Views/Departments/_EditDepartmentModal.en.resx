@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader ame="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, ...</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, ...</value></resheader>
+
+  <data name="Add New Department" xml:space="preserve"><value>Add New Department</value></data>
+  <data name="Edit Department" xml:space="preserve"><value>Edit Department</value></data>
+  <data name="NameVi" xml:space="preserve"><value>Name (Vietnamese)</value></data>
+  <data name="NameEn" xml:space="preserve"><value>Name (English)</value></data>
+  <data name="NameJa" xml:space="preserve"><value>Name (Japanese)</value></data>
+  <data name="Enter NameVi" xml:space="preserve"><value>Enter department name in Vietnamese</value></data>
+  <data name="Enter NameEn" xml:space="preserve"><value>Enter department name in English</value></data>
+  <data name="Enter NameJa" xml:space="preserve"><value>Enter department name in Japanese</value></data>
+  <data name="Parent Department" xml:space="preserve"><value>Parent Department</value></data>
+  <data name="Root Department" xml:space="preserve"><value>Root Department</value></data>
+  <data name="Description" xml:space="preserve"><value>Description</value></data>
+  <data name="Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Close" xml:space="preserve"><value>Close</value></data>
+</root>

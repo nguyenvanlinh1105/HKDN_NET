@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Password Default" xml:space="preserve"><value>Mật khẩu mặc định</value></data>
+<data name="Fiscal Year Start Day (dd/mm)" xml:space="preserve"><value>Ngày bắt đầu năm tài chính (dd/mm)</value></data>
+<data name="Annual Leave Days" xml:space="preserve"><value>Số ngày phép năm</value></data>
+<data name="Approve Leave By" xml:space="preserve"><value>Người duyệt nghỉ phép</value></data>
+<data name="Cancel Leave By" xml:space="preserve"><value>Người hủy nghỉ phép</value></data>
+
+</root>

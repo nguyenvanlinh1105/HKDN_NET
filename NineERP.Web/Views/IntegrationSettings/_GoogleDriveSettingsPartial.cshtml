@@ -1,0 +1,20 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label for="Drive_ClientId">@Localizer["Client ID"]</label>
+        <input type="text" class="form-control" id="Drive_ClientId">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="Drive_ClientSecret">@Localizer["Client Secret"]</label>
+        <input type="text" class="form-control" id="Drive_ClientSecret">
+    </div>
+    <div class="col-md-12 mb-3">
+        <label for="Drive_ServiceAccountJson">@Localizer["Service Account JSON"]</label>
+        <textarea class="form-control" id="Drive_ServiceAccountJson" rows="4"></textarea>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="Drive_ParentFolderId">@Localizer["Parent Folder ID"]</label>
+        <input type="text" class="form-control" id="Drive_ParentFolderId">
+    </div>
+</div>

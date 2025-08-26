@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="EmployeeStatusManagement" xml:space="preserve">
+    <value>Employee Status Management</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search name..." xml:space="preserve">
+    <value>Search name</value>
+  </data>
+  <data name="KbnEmployeeStatusName, Description..." xml:space="preserve">
+    <value>Employee Status, Description...</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="EmployeeStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="NameVi" xml:space="preserve">
+    <value>Vietnamese Name</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>English Name</value>
+  </data>
+  <data name="NameJp" xml:space="preserve">
+    <value>Japanese Name</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve">
+    <value>Delete employee status?</value>
+  </data>
+  <data name="ConfirmDeleteText" xml:space="preserve">
+    <value>Are you sure you want to delete this employee status?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="OFFICIAL" xml:space="preserve">
+    <value>Official</value>
+  </data>
+  <data name="UNOFFICIAL" xml:space="preserve">
+    <value>Unofficial</value>
+  </data>
+  <data name="RETIRED" xml:space="preserve">
+    <value>Retired</value>
+  </data>
+  <data name="AddNewKbnEmployeeStatus" xml:space="preserve">
+    <value>Add new employee status</value>
+  </data>
+  <data name="EditKbnEmployeeStatus" xml:space="preserve">
+    <value>Edit employee status</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>No records found.</value>
+  </data>
+</root>

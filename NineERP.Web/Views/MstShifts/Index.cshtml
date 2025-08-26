@@ -1,0 +1,162 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@{
+	ViewData["Title"] = Localizer["MstShiftManagement"];
+	var breadcrumb = new List<(string Text, string Url)>
+	{
+		(Localizer["Dashboard"].Value, "/dashboard"),
+		(Localizer["MstShiftManagement"].Value, null!)
+	};
+}
+
+@section Scripts {
+	<script src="~/assets/libs/mustache/mustache.min.js" asp-append-version="true"></script>
+	<script src="~/admin-app/controllers/mstshift/index.js" asp-append-version="true"></script>
+	<script>
+		var mstShiftObj = new MstShiftsController();
+		mstShiftObj.initialize();
+
+		window.localization = {
+			ConfirmDeleteTitle: '@Localizer["ConfirmDeleteTitle"]',
+			ConfirmDeleteText: '@Localizer["ConfirmDeleteText"]',
+			Yes: '@Localizer["Yes"]',
+			No: '@Localizer["No"]',
+			Active: '@Localizer["Active"]',
+			Block: '@Localizer["Block"]',
+			AddNewMstShift: '@Localizer["AddNewMstShift"]',
+			EditMstShift: '@Localizer["EditMstShift"]',
+			ConfirmDefaultTitle: '@Localizer["ConfirmDefaultTitle"]',
+			ConfirmDefaultText: '@Localizer["ConfirmDefaultText"]',
+			NoRecordsFound: '@Localizer["NoRecordsFound"]',
+			SelectTargetShift: '@Localizer["SelectTargetShift"]',
+			Move: '@Localizer["Move"]',
+			MovedSuccessfully: '@Localizer["MovedSuccessfully"]',
+			EmployeeCode: '@Localizer["EmployeeCode"]',
+			FullName: '@Localizer["FullName"]',
+			Number: '@Localizer["Number"]',
+			MorningWork: '@Localizer["MorningWork"]',
+			AfternoonWork: '@Localizer["AfternoonWork"]',
+			TotalHour: '@Localizer["TotalHour"]',
+			NumberOfEmployee: '@Localizer["NumberOfEmployee"]',
+			Action: '@Localizer["Action"]',
+			MoveSelectEmployee: '@Localizer["MoveSelectEmployee"]',
+		};
+	</script>
+}
+
+<!-- Breadcrumb -->
+<div class="row">
+	<div class="col-12">
+		<div class="page-title-box d-flex justify-content-between align-items-center">
+			<div>
+				<h4 class="page-title">@ViewData["Title"]</h4>
+			</div>
+			<div>
+				@await Html.PartialAsync("_BreadcrumbPartial", breadcrumb)
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Filter -->
+<div class="row mb-2">
+	<div class="col-lg-8">		
+	</div>
+	<div class="col-lg-4 text-lg-right mt-3 mt-lg-0">
+		<button type="button" class="btn btn-danger float-right" id="btn-show-add-modal">
+			<i class="mdi mdi-plus-circle"></i> @Localizer["AddNew"]
+		</button>
+	</div>
+</div>
+
+<!-- Table View -->
+<div class="card" id="device-type-list-view">
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>@Localizer["Number"]</th>
+						<th>@Localizer["MorningWork"]</th>
+						<th>@Localizer["AfternoonWork"]</th>
+						<th>@Localizer["TotalHour"]</th>
+						<th>@Localizer["NumberOfEmployee"]</th>
+						<th>@Localizer["Description"]</th>
+						<th>@Localizer["Default"]</th>
+						<th class="text-center">@Localizer["Action"]</th>
+					</tr>
+				</thead>
+				<tbody id="tbl-content"></tbody>
+			</table>
+		</div>
+		<partial name="_PaginationPartial" />
+	</div>
+</div>
+
+<!-- Template -->
+<script id="table-template" type="x-tmpl-mustache">
+	<tr>
+		<td>{{DisplayOrder}}</td>
+		<td>{{MorningWork}}</td>
+		<td>{{AfternoonWork}}</td>
+		<td>{{TotalHour}}</td>
+		<td>{{NumberOfEmployee}}</td>
+		<td>{{Description}}</td>
+		<td class="text-center">
+			<input type="radio" name="defaultShift" class="radio-default-shift" data-id="{{Id}}" {{#IsDefault}}checked{{/IsDefault}} />
+		</td>
+		<td class="text-center">
+			{{#HasEmployee}}
+			<a href="#" class="btn btn-xs btn-info btn-detail mr-1" data-id="{{Id}}">
+				<i class="fe-eye"></i>
+			</a>
+			{{/HasEmployee}}
+			{{^HasEmployee}}
+			<span class="btn btn-xs btn-outline-secondary mr-1 invisible">
+				<i class="fe-eye"></i>
+			</span>
+			{{/HasEmployee}}
+			<a href="#" class="btn btn-xs btn-primary btn-edit mr-1" data-id="{{Id}}">
+				<i class="fe-edit"></i>
+			</a>
+			{{^IsDefault}}
+			{{^HasEmployee}}
+			<a href="#" class="btn btn-xs btn-danger btn-delete mr-1" data-id="{{Id}}">
+				<i class="fe-trash-2"></i>
+			</a>
+			{{/HasEmployee}}
+			{{#HasEmployee}}
+			<span class="btn btn-xs btn-outline-secondary mr-1 invisible">
+				<i class="fe-trash-2"></i>
+			</span>
+			{{/HasEmployee}}
+			{{/IsDefault}}
+			{{#IsDefault}}
+			<span class="btn btn-xs btn-outline-secondary mr-1 invisible">
+				<i class="fe-trash-2"></i>
+			</span>
+			{{/IsDefault}}
+		</td>
+	</tr>
+</script>
+
+<!-- Template: Danh sách ca để chọn khi Move -->
+<script id="move-shift-template" type="x-tmpl-mustache">
+	{{#shifts}}
+	<tr>
+		<td>{{DisplayOrder}}</td>
+		<td>{{MorningWork}}</td>
+		<td>{{AfternoonWork}}</td>
+		<td>{{TotalHour}}</td>
+		<td>{{NumberOfEmployee}}</td>
+		<td class="text-center">
+			<button class="btn btn-sm btn-primary btn-choose-shift" data-id="{{id}}">
+				<i class="fe-log-in"></i> @Localizer["Move"]
+			</button>
+		</td>
+	</tr>
+	{{/shifts}}
+</script>
+<!-- Modal -->
+@await Html.PartialAsync("_AddMstShiftModal")
+@await Html.PartialAsync("_ShiftEmployeeDetailPartial")

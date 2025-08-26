@@ -1,0 +1,162 @@
+/* --------------------------------------------------
+   1. Global & Modal Styling
+--------------------------------------------------*/
+.modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+.modal-body .card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: none;
+}
+.modal-body .card-header,
+.modal-header,
+.modal-footer {
+    background: #f8f9fa;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+}
+.modal-body .card-body { padding: 1.5rem; }
+.modal-body .form-group { margin-bottom: 1rem; }
+.modal-body input.form-control,
+.modal-body textarea.form-control,
+.modal-body select.form-control {
+    border-radius: 0.5rem;
+}
+.modal-content { position: relative; }
+
+/* --------------------------------------------------
+   2. Avatar, Status Badge
+--------------------------------------------------*/
+.employee-avatar {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+.status-badge {
+    font-size: 0.75rem;
+    padding: 0.25em 0.6em;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+/* --------------------------------------------------
+   3. Card Summary (Dashboard)
+--------------------------------------------------*/
+.card-summary {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-summary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.card-summary h3 {
+    margin-bottom: 0;
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: #343a40;
+}
+.card-summary div {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* One per row on mobile */
+@media (max-width: 767.98px) {
+    .summary-row > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* --------------------------------------------------
+   4. Table Responsive Styling
+--------------------------------------------------*/
+.table-responsive {
+    overflow-x: auto;
+    position: relative !important;
+}
+.table {
+    width: 100%;
+}
+.table td {
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: visible !important;
+}
+.table thead th {
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+.table td:last-child,
+.table td .dropdown {
+    position: relative;
+}
+.table td .dropdown-menu,
+.table-responsive .dropdown-menu {
+    position: absolute !important;
+    z-index: 9999 !important;
+    min-width: 120px;
+    right: 0;
+    left: auto;
+    transform: translateY(0) !important;
+    will-change: transform;
+}
+.dropup .dropdown-menu {
+    top: auto !important;
+    bottom: 100% !important;
+    margin-bottom: 0.5rem;
+}
+
+/* --------------------------------------------------
+   5. Mobile Card View (custom for phones)
+--------------------------------------------------*/
+@media (max-width: 767.98px) {
+    #tbl-view { display: none; }
+    #card-view { display: block; }
+    #load-more-wrapper { display: block !important; }
+    .card-employee {
+        border: 1px solid #eee;
+        border-radius: 0.75rem;
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        margin-bottom: 1rem;
+    }
+    .card-employee .employee-meta div {
+        font-size: 14px;
+        margin-bottom: 4px;
+        color: #333;
+    }
+}
+
+/* Desktop view */
+@media (min-width: 768px) {
+    #tbl-view { display: block; }
+    #card-view { display: none; }
+    #load-more-wrapper { display: none !important; }
+}

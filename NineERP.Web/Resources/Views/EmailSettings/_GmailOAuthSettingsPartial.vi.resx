@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Gmail_ClientId"><value>Client ID</value></data>
+<data name="Gmail_ClientSecret"><value>Client Secret</value></data>
+<data name="Gmail_RefreshToken"><value>Refresh Token</value></data>
+<data name="SenderEmail"><value>Email người gửi</value></data>
+<data name="SenderName"><value>Tên người gửi</value></data>
+<data name="Gmail_Required"><value>Vui lòng nhập đầy đủ thông tin Gmail OAuth</value></data>
+</root>

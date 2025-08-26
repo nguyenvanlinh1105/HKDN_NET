@@ -1,0 +1,126 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Audit Log"];
+    var breadcrumb = new List<(string Text, string Url)>
+    {
+        (Localizer["Dashboard"].Value, "/dashboard"),
+        (Localizer["Audit Log"].Value, null!)
+    };
+}
+
+@section Scripts {
+    <script src="~/assets/libs/mustache/mustache.min.js" asp-append-version="true"></script>
+    <script src="~/admin-app/controllers/auditlog/index.js" asp-append-version="true"></script>
+    <script>
+        window.localization = {
+            NoDataFound: '@Localizer["NoDataFound"]',
+            Export: '@Localizer["Export"]',
+            Search: '@Localizer["Search"]',
+            All: '@Localizer["All"]',
+            Insert: '@Localizer["Insert"]',
+            Update: '@Localizer["Update"]',
+            Delete: '@Localizer["Delete"]',
+            Login: '@Localizer["Login"]',
+            Detail: '@Localizer["Detail"]',
+            View: '@Localizer["View"]',
+            Time: '@Localizer["Time"]',
+            OldValues: '@Localizer["Old Values"]',
+            NewValues: '@Localizer["New Values"]',
+            AuditLogDetail: '@Localizer["Audit Log Detail"]',
+            confirmTitle: '@Localizer["Are you sure?"]',
+            confirmYes: '@Localizer["Yes"]',
+            confirmNo: '@Localizer["No"]',
+            Active: '@Localizer["Active"]',
+            Blocked: '@Localizer["Blocked"]'
+        };
+
+        const auditLogController = new AuditLogController();
+        auditLogController.initialize();
+    </script>
+}
+
+<!-- Breadcrumb -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex justify-content-between align-items-center">
+            <div>
+                <h4 class="page-title">@ViewData["Title"]</h4>
+            </div>
+            <div>
+                @await Html.PartialAsync("_BreadcrumbPartial", breadcrumb)
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filter -->
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <form id="form-filter" class="form-inline">
+                <div class="form-group mb-2 mr-2">
+                    <label class="sr-only" for="txtKeyword">Search</label>
+                    <input type="text" id="txtKeyword" class="form-control" placeholder="@Localizer["Search by user, table, action"]">
+                </div>
+                <div class="form-group mb-2 mr-2">
+                    <label class="mr-2" for="ddlAction">@Localizer["Action"]</label>
+                    <select class="custom-select" id="ddlAction">
+                        <option value="">@Localizer["All"]</option>
+                        <option value="Insert">Insert</option>
+                        <option value="Update">Update</option>
+                        <option value="Delete">Delete</option>
+                        <option value="Login">Login</option>
+                    </select>
+                </div>
+                <button type="button" id="btn-search" class="btn btn-primary mb-2 mr-2">
+                    <i class="mdi mdi-magnify mr-1"></i> @Localizer["Search"]
+                </button>
+                <button type="button" id="btn-export" class="btn btn-success mb-2">
+                    <i class="mdi mdi-download mr-1"></i> @Localizer["Export"]
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<!-- Table -->
+<div class="card">
+    <div class="card-body">
+        <div class="table-wrapper">
+            <div class="table-responsive">
+                <table class="table table-striped dt-responsive nowrap">
+                    <thead>
+                        <tr>
+                            <th>@Localizer["User"]</th>
+                            <th>@Localizer["Table"]</th>
+                            <th>@Localizer["Action"]</th>
+                            <th>@Localizer["IP Address"]</th>
+                            <th>@Localizer["Time"]</th>
+                            <th class="text-center">@Localizer["Detail"]</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-content"></tbody>
+                </table>
+            </div>
+        </div>
+        <partial name="_PaginationPartial" />
+    </div>
+</div>
+
+<!-- Mustache Template -->
+<script id="table-template" type="x-tmpl-mustache">
+    <tr>
+        <td>{{UserName}}</td>
+        <td>{{TableName}}</td>
+        <td>{{ActionType}}</td>
+        <td>{{IpAddress}}</td>
+        <td>{{ActionTimestamp}}</td>
+        <td class="text-center">
+            <a href="javascript:;" class="btn btn-sm btn-info btn-detail" data-old='{{OldValues}}' data-new='{{NewValues}}' data-time='{{ActionTimestamp}}'>@Localizer["View"]</a>
+        </td>
+    </tr>
+</script>
+@await Html.PartialAsync("_DetailAuditLogModal")
